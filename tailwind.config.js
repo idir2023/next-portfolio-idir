@@ -11,8 +11,8 @@ module.exports = {
       'light-gray': '#D9D9D9',
       black: '#181818',
       // primary: '#0059B2', // blue
-      primary: '#007FFF', // light blue
-      // primary: '#E76F00', // orange
+      // primary: '#007FFF', // light blue
+      primary: '#E76F00', // orange
       white: '#FFFFFF',
       transparent: 'transparent',
     },
