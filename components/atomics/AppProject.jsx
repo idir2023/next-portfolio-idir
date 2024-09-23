@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+
 const AppProject = ({ project }) => (
   <div className="bg-white border border-light-gray rounded-lg px-4 pt-6 text-center overflow-hidden">
     <div className="mb-3">
