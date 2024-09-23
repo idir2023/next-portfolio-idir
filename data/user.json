@@ -187,7 +187,7 @@
       {
         "id": 4,
         "top": true,
-        "image": "/project/task.PNG",
+        "image": "https://idir2023.github.io/next-portfolio/project/task.png",
         "name": "Task Website",
         "stack": "JQuery, CSS, Laravel",
         "category": "Personal Project",
@@ -196,7 +196,7 @@
       {
         "id": 5,
         "top": true,
-        "image": "/project/portfolio.PNG",
+        "image": "/project/portfolio.png",
         "name": "My Portfolio",
         "stack": "Next js",
         "category": "Personal Project",
@@ -232,7 +232,7 @@
       {
         "id": 9,
         "top": true,
-        "image": "/project/syndic.PNG",
+        "image": "/project/syndic.png",
         "name": "Syndicat Systeme",
         "stack": "Laravel ,JQuery , Tailwind CSS",
         "category": "Personal Project",
