@@ -187,7 +187,7 @@
       {
         "id": 4,
         "top": true,
-        "image": "https://idir2023.github.io/next-portfolio/project/task.png",
+        "image": "/project/task.png",
         "name": "Task Website",
         "stack": "JQuery, CSS, Laravel",
         "category": "Personal Project",
