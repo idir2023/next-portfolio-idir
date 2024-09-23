@@ -187,7 +187,7 @@
       {
         "id": 4,
         "top": true,
-        "image": "/project/task.png",
+        "image": "/project/task.PNG",
         "name": "Task Website",
         "stack": "JQuery, CSS, Laravel",
         "category": "Personal Project",
@@ -196,7 +196,7 @@
       {
         "id": 5,
         "top": true,
-        "image": "/project/portfolio.png",
+        "image": "/project/portfolio.PNG",
         "name": "My Portfolio",
         "stack": "Next js",
         "category": "Personal Project",
@@ -232,7 +232,7 @@
       {
         "id": 9,
         "top": true,
-        "image": "/project/syndic.png",
+        "image": "/project/syndic.PNG",
         "name": "Syndicat Systeme",
         "stack": "Laravel ,JQuery , Tailwind CSS",
         "category": "Personal Project",
