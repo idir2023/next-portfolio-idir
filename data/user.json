@@ -187,7 +187,7 @@
       {
         "id": 4,
         "top": true,
-        "image": "/next-portfolio-idir/images/task.png",
+        "image": "/next-portfolio-idir/images/task_app.png",
         "name": "Task Website",
         "stack": "JQuery, CSS, Laravel",
         "category": "Personal Project",
@@ -196,7 +196,7 @@
       {
         "id": 5,
         "top": true,
-        "image": "/next-portfolio-idir/images/portfolio.png",
+        "image": "/next-portfolio-idir/images/portf.png",
         "name": "My Portfolio",
         "stack": "Next js",
         "category": "Personal Project",
@@ -223,7 +223,7 @@
       {
         "id": 8,
         "top": true,
-        "image": "/next-portfolio-idir/images/chat.png",
+        "image": "/next-portfolio-idir/images/chat_app.png",
         "name": "Chat App",
         "stack": "React JS, Vite JS, CSS, Html",
         "category": "Personal Project",
@@ -232,7 +232,7 @@
       {
         "id": 9,
         "top": true,
-        "image": "/next-portfolio-idir/images/syndic.png",
+        "image": "/next-portfolio-idir/images/syndichat.png",
         "name": "Syndicat Systeme",
         "stack": "Laravel ,JQuery , Tailwind CSS",
         "category": "Personal Project",
