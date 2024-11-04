@@ -19,7 +19,7 @@ const AppHero = () => (
         <p className="text-xs lg:text-base text-gray max-w-md tracking-widest mt-2 lg:mt-3 md:ml-1">
           {DATA.description}
         </p>
-        <AppButton title="Resume download" href="/cv/cv.pdf" download="cv.pdf" />
+        <AppButton title="Resume download" href="/next-portfolio-idir/images/cv.pdf" download="cv.pdf" />
       </div>
     </AppContainer>
   </header>

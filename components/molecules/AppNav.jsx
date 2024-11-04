@@ -55,8 +55,8 @@ const AppNav = () => {
       >
         <Link href="/" className="flex items-center">
           <Image
-            src="/favicon.ico"
-            alt="Syed Moinuddin"
+            src="/Syed Logo.png"
+            alt="Idir Lahcen"
             width={40}
             height={40}
           />

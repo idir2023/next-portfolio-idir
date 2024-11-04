@@ -4,12 +4,12 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "Syed Moinuddin",
-  "short_name": "Syed Moinuddin",
-  "description": "Syed Moinuddin Personal Portfolio Website",
+  "name": "Idir Lahcen",
+  "short_name": "Idir Lahcen",
+  "description": "My Personal Portfolio Website",
   "icons": [
     {
-      "src": "/Syed Logo.png",
+      "src": "/next-portfolio-idir/images/Syed Logo.png",
       "sizes": "192x192",
       "type": "image/svg"
     }
