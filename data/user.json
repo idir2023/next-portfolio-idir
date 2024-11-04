@@ -169,7 +169,7 @@
       {
         "id": 2,
         "top": false,
-        "image": "/next-portfolio-idir/images/invoices.png",
+        "image": "/next-portfolio-idir/images/invoice.png",
         "name": "Invoices Management",
         "stack": "JQuery, CSS, Laravel",
         "category": "Personal Project",
@@ -205,7 +205,7 @@
       {
         "id": 6,
         "top": true,
-        "image": "/next-portfolio-idir/images/airline-reservation.png",
+        "image": "/next-portfolio-idir/images/airline.png",
         "name": "Airline Reservation",
         "stack": "React.js, Vite.js, CSS, API Key",
         "category": "Personal Project",
