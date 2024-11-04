@@ -34,123 +34,123 @@
       "id": 2,
       "name": "Website Development",
       "description": "We offer complete website development services, transforming your designs into fully functional, visually appealing websites. Our focus is on optimizing the user experience and ensuring excellent performance across all platforms.",
-      "icon": "/services/service-website.svg"
+      "icon": "/images/service-website.svg"
     },
     {
       "id": 3,
       "name": "Web Application Development",
       "description": "Our team specializes in developing robust, feature-rich web applications that offer seamless user interactions and high performance. We ensure scalability and security to meet the growing demands of your business.",
-      "icon": "/services/service-webapps.svg"
+      "icon": "/images/service-webapps.svg"
     },
     {
       "id": 4,
       "name": "Responsive Design",
       "description": "We create responsive designs that adapt flawlessly to any device, including mobile, tablet, and desktop. Our designs ensure a consistent and engaging user experience, no matter the screen size or resolution.",
-      "icon": "/services/service-rwd.svg"
+      "icon": "/images/service-rwd.svg"
     },
     {
       "id": 5,
       "name": "Performance Optimization",
       "description": "We focus on enhancing the performance of websites and web applications, ensuring faster loading times and smooth interactions. By optimizing code and leveraging the latest technologies, we deliver high-performing solutions that improve user satisfaction and engagement.",
-      "icon": "/services/service-performance.svg"
+      "icon": "/images/service-performance.svg"
     }
   ],
   "skills": [
     {
       "id": 1,
       "name": "HTML 5",
-      "icon": "/skills/skill-html5.svg"
+      "icon": "/images/skill-html5.svg"
     },
     {
       "id": 2,
       "name": "CSS 3",
-      "icon": "/skills/skill-css3.svg"
+      "icon": "/images/skill-css3.svg"
     },
     {
       "id": 3,
       "name": "Javascript",
-      "icon": "/skills/skill-javascript.svg"
+      "icon": "/images/skill-javascript.svg"
     },
     {
       "id": 4,
       "name": "TailwindCss",
-      "icon": "/skills/skill-tailwindcss.svg"
+      "icon": "/images/skill-tailwindcss.svg"
     },
     {
       "id": 5,
       "name": "Laravel",
-      "icon": "/skills/laravel.png"
+      "icon": "/images/laravel.png"
     },
     {
       "id": 6,
       "name": "Bootstrap 5",
-      "icon": "/skills/bootstrap-logo.svg"
+      "icon": "/images/bootstrap-logo.svg"
     },
     {
       "id": 7,
       "name": "React JS",
-      "icon": "/skills/skill-reactjs.svg"
+      "icon": "/images/skill-reactjs.svg"
     },
     {
       "id": 8,
       "name": "Next JS",
-      "icon": "/skills/skill-nextjs.svg"
+      "icon": "/images/skill-nextjs.svg"
     },
     {
       "id": 9,
       "name": "Firebase",
-      "icon": "/skills/skill-firebase.svg"
+      "icon": "/images/skill-firebase.svg"
     },
     {
       "id": 10,
       "name": "Git",
-      "icon": "/skills/skill-git.svg"
+      "icon": "/images/skill-git.svg"
     },
     {
       "id": 11,
       "name": "Github",
-      "icon": "/skills/skill-github.svg"
+      "icon": "/images/skill-github.svg"
     },
     {
       "id": 13,
       "name": "Sql",
-      "icon": "/skills/skill-sql.png"
+      "icon": "/images/skill-sql.png"
     },
     {
       "id": 14,
       "name": "Vite JS",
-      "icon": "/skills/vitejs.svg"
+      "icon": "/images/vitejs.svg"
     },
     {
       "id": 15,
       "name": "Java",
-      "icon": "/skills/java.png"
+      "icon": "/images/java.png"
     },
     {
       "id": 16,
       "name": "Visual Studio Code",
-      "icon": "/skills/vscode.png"
+      "icon": "/images/vscode.png"
     },
     {
       "id": 18,
       "name": " Linux",
-      "icon": "/skills/Linux.png"
+      "icon": "/images/Linux.png"
     },
     {
       "id": 19,
       "name": "C++",
-      "icon": "/skills/c++.png"
+      "icon": "/images/c++.png"
     },
     {
       "id": 20,
       "name": "Node JS",
-      "icon": "/skills/nodejs.png"
+      "icon": "/images/nodejs.png"
     }
     ,
     {
       "id": 21,
       "name": "MongoDB",
-      "icon": "/skills/mongodb.png"
+      "icon": "/images/mongodb.png"
     }
   ],
   "project": {
@@ -160,7 +160,7 @@
       {
         "id": 1,
         "top": false,
-        "image": "/project/work-2.png",
+        "image": "/images/work-2.png",
         "name": "Hospital Management",
         "stack": "HTML, CSS, PHP, JavaScript",
         "category": "Personal Project",
@@ -169,7 +169,7 @@
       {
         "id": 2,
         "top": false,
-        "image": "/project/invoices.png",
+        "image": "/images/invoices.png",
         "name": "Invoices Management",
         "stack": "JQuery, CSS, Laravel",
         "category": "Personal Project",
@@ -178,7 +178,7 @@
       {
         "id": 3,
         "top": false,
-        "image": "/project/work-7.png",
+        "image": "/images/work-7.png",
         "name": "WhatsApp Portfolio",
         "stack": "Javascript JS, CSS",
         "category": "Personal Project",
@@ -187,7 +187,7 @@
       {
         "id": 4,
         "top": true,
-        "image": "/project/task.png",
+        "image": "/images/task.png",
         "name": "Task Website",
         "stack": "JQuery, CSS, Laravel",
         "category": "Personal Project",
@@ -196,7 +196,7 @@
       {
         "id": 5,
         "top": true,
-        "image": "/project/portfolio.png",
+        "image": "/images/portfolio.png",
         "name": "My Portfolio",
         "stack": "Next js",
         "category": "Personal Project",
@@ -205,7 +205,7 @@
       {
         "id": 6,
         "top": true,
-        "image": "/project/airline-reservation.png",
+        "image": "/images/airline-reservation.png",
         "name": "Airline Reservation",
         "stack": "React.js, Vite.js, CSS, API Key",
         "category": "Personal Project",
@@ -214,7 +214,7 @@
       {
         "id": 7,
         "top": true,
-        "image": "/project/work-1.png",
+        "image": "/images/work-1.png",
         "name": "Online Recruitment",
         "stack": "HTML, CSS, PHP, JavaScript",
         "category": "Personal Project",
@@ -223,7 +223,7 @@
       {
         "id": 8,
         "top": true,
-        "image": "/project/chat.png",
+        "image": "/images/chat.png",
         "name": "Chat App",
         "stack": "React JS, Vite JS, CSS",
         "category": "Personal Project",
@@ -232,7 +232,7 @@
       {
         "id": 9,
         "top": true,
-        "image": "/project/syndic.png",
+        "image": "/images/syndic.png",
         "name": "Syndicat Systeme",
         "stack": "Laravel ,JQuery , Tailwind CSS",
         "category": "Personal Project",
