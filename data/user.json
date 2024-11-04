@@ -59,98 +59,98 @@
     {
       "id": 1,
       "name": "HTML 5",
-      "icon": "/images/skill-html5.svg"
+      "icon": "/next-portfolio-idir/images/skill-html5.svg"
     },
     {
       "id": 2,
       "name": "CSS 3",
-      "icon": "/images/skill-css3.svg"
+      "icon": "/next-portfolio-idir/images/skill-css3.svg"
     },
     {
       "id": 3,
       "name": "Javascript",
-      "icon": "/images/skill-javascript.svg"
+      "icon": "/next-portfolio-idir/images/skill-javascript.svg"
     },
     {
       "id": 4,
       "name": "TailwindCss",
-      "icon": "/images/skill-tailwindcss.svg"
+      "icon": "/next-portfolio-idir/images/skill-tailwindcss.svg"
     },
     {
       "id": 5,
       "name": "Laravel",
-      "icon": "/images/laravel.png"
+      "icon": "/next-portfolio-idir/images/laravel.png"
     },
     {
       "id": 6,
       "name": "Bootstrap 5",
-      "icon": "/images/bootstrap-logo.svg"
+      "icon": "/next-portfolio-idir/images/bootstrap-logo.svg"
     },
     {
       "id": 7,
       "name": "React JS",
-      "icon": "/images/skill-reactjs.svg"
+      "icon": "/next-portfolio-idir/images/skill-reactjs.svg"
     },
     {
       "id": 8,
       "name": "Next JS",
-      "icon": "/images/skill-nextjs.svg"
+      "icon": "/next-portfolio-idir/images/skill-nextjs.svg"
     },
     {
       "id": 9,
       "name": "Firebase",
-      "icon": "/images/skill-firebase.svg"
+      "icon": "/next-portfolio-idir/images/skill-firebase.svg"
     },
     {
       "id": 10,
       "name": "Git",
-      "icon": "/images/skill-git.svg"
+      "icon": "/next-portfolio-idir/images/skill-git.svg"
     },
     {
       "id": 11,
       "name": "Github",
-      "icon": "/images/skill-github.svg"
+      "icon": "/next-portfolio-idir/images/skill-github.svg"
     },
     {
       "id": 13,
       "name": "Sql",
-      "icon": "/images/skill-sql.png"
+      "icon": "/next-portfolio-idir/images/skill-sql.png"
     },
     {
       "id": 14,
       "name": "Vite JS",
-      "icon": "/images/vitejs.svg"
+      "icon": "/next-portfolio-idir/images/vitejs.svg"
     },
     {
       "id": 15,
       "name": "Java",
-      "icon": "/images/java.png"
+      "icon": "/next-portfolio-idir/images/java.png"
     },
     {
       "id": 16,
       "name": "Visual Studio Code",
-      "icon": "/images/vscode.png"
+      "icon": "/next-portfolio-idir/images/vscode.png"
     },
     {
       "id": 18,
       "name": " Linux",
-      "icon": "/images/Linux.png"
+      "icon": "/next-portfolio-idir/images/Linux.png"
     },
     {
       "id": 19,
       "name": "C++",
-      "icon": "/images/c++.png"
+      "icon": "/next-portfolio-idir/images/c++.png"
     },
     {
       "id": 20,
       "name": "Node JS",
-      "icon": "/images/nodejs.png"
+      "icon": "/next-portfolio-idir/images/nodejs.png"
     }
     ,
     {
       "id": 21,
       "name": "MongoDB",
-      "icon": "/images/mongodb.png"
+      "icon": "/next-portfolio-idir/images/mongodb.png"
     }
   ],
   "project": {
