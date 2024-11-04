@@ -34,25 +34,25 @@
       "id": 2,
       "name": "Website Development",
       "description": "We offer complete website development services, transforming your designs into fully functional, visually appealing websites. Our focus is on optimizing the user experience and ensuring excellent performance across all platforms.",
-      "icon": "/images/service-website.svg"
+      "icon": "/next-portfolio-idir/images/service-website.svg"
     },
     {
       "id": 3,
       "name": "Web Application Development",
       "description": "Our team specializes in developing robust, feature-rich web applications that offer seamless user interactions and high performance. We ensure scalability and security to meet the growing demands of your business.",
-      "icon": "/images/service-webapps.svg"
+      "icon": "/next-portfolio-idir/images/service-webapps.svg"
     },
     {
       "id": 4,
       "name": "Responsive Design",
       "description": "We create responsive designs that adapt flawlessly to any device, including mobile, tablet, and desktop. Our designs ensure a consistent and engaging user experience, no matter the screen size or resolution.",
-      "icon": "/images/service-rwd.svg"
+      "icon": "/next-portfolio-idir/images/service-rwd.svg"
     },
     {
       "id": 5,
       "name": "Performance Optimization",
       "description": "We focus on enhancing the performance of websites and web applications, ensuring faster loading times and smooth interactions. By optimizing code and leveraging the latest technologies, we deliver high-performing solutions that improve user satisfaction and engagement.",
-      "icon": "/images/service-performance.svg"
+      "icon": "/next-portfolio-idir/images/service-performance.svg"
     }
   ],
   "skills": [
@@ -160,7 +160,7 @@
       {
         "id": 1,
         "top": false,
-        "image": "/images/work-2.png",
+        "image": "/next-portfolio-idir/images/work-2.png",
         "name": "Hospital Management",
         "stack": "HTML, CSS, PHP, JavaScript",
         "category": "Personal Project",
@@ -169,7 +169,7 @@
       {
         "id": 2,
         "top": false,
-        "image": "/images/invoices.png",
+        "image": "/next-portfolio-idir/images/invoices.png",
         "name": "Invoices Management",
         "stack": "JQuery, CSS, Laravel",
         "category": "Personal Project",
@@ -178,7 +178,7 @@
       {
         "id": 3,
         "top": false,
-        "image": "/images/work-7.png",
+        "image": "/next-portfolio-idir/images/work-7.png",
         "name": "WhatsApp Portfolio",
         "stack": "Javascript JS, CSS",
         "category": "Personal Project",
@@ -187,7 +187,7 @@
       {
         "id": 4,
         "top": true,
-        "image": "/images/task.png",
+        "image": "/next-portfolio-idir/images/task.png",
         "name": "Task Website",
         "stack": "JQuery, CSS, Laravel",
         "category": "Personal Project",
@@ -196,7 +196,7 @@
       {
         "id": 5,
         "top": true,
-        "image": "/images/portfolio.png",
+        "image": "/next-portfolio-idir/images/portfolio.png",
         "name": "My Portfolio",
         "stack": "Next js",
         "category": "Personal Project",
@@ -205,7 +205,7 @@
       {
         "id": 6,
         "top": true,
-        "image": "/images/airline-reservation.png",
+        "image": "/next-portfolio-idir/images/airline-reservation.png",
         "name": "Airline Reservation",
         "stack": "React.js, Vite.js, CSS, API Key",
         "category": "Personal Project",
@@ -214,7 +214,7 @@
       {
         "id": 7,
         "top": true,
-        "image": "/images/work-1.png",
+        "image": "/next-portfolio-idir/images/work-1.png",
         "name": "Online Recruitment",
         "stack": "HTML, CSS, PHP, JavaScript",
         "category": "Personal Project",
@@ -223,7 +223,7 @@
       {
         "id": 8,
         "top": true,
-        "image": "/images/chat.png",
+        "image": "/next-portfolio-idir/images/chat.png",
         "name": "Chat App",
         "stack": "React JS, Vite JS, CSS",
         "category": "Personal Project",
@@ -232,7 +232,7 @@
       {
         "id": 9,
         "top": true,
-        "image": "/images/syndic.png",
+        "image": "/next-portfolio-idir/images/syndic.png",
         "name": "Syndicat Systeme",
         "stack": "Laravel ,JQuery , Tailwind CSS",
         "category": "Personal Project",
