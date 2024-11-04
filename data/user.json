@@ -225,7 +225,7 @@
         "top": true,
         "image": "/next-portfolio-idir/images/chat.png",
         "name": "Chat App",
-        "stack": "React JS, Vite JS, CSS",
+        "stack": "React JS, Vite JS, CSS, Html",
         "category": "Personal Project",
         "url": "https://github.com/idir2023/Chat_real_use_react.js"
       },
