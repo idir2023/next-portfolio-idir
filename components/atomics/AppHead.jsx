@@ -36,7 +36,7 @@ AppHead.defaultProps = {
   description:
     'I am a freelancer from Morroco, who focuses on web development, especially Back-End web development.',
   keyword: '',
-  image: '/next-portfolio-idir/images/Syed Logo.png',
+  image: '/next-portfolio-idir/images/favicon.ico',
 };
 
 export default AppHead;
