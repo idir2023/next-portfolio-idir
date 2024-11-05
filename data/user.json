@@ -196,7 +196,7 @@
       {
         "id": 5,
         "top": true,
-        "image": "/next-portfolio-idir/images/portf.png",
+        "image": "/next-portfolio-idir/images/portfolio_react.png",
         "name": "My Portfolio",
         "stack": "Next js",
         "category": "Personal Project",
