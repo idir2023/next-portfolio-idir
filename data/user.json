@@ -2,6 +2,7 @@
   "name": "Idir Lahcen",
   "status": "Software Engineer",
   "description": "I am passionate and interested in the ever-growing field of Web Front-End development.I enjoy transforming designs into functional user interfaces using the latest tools and frameworks.",
+  "image" : "/next-portfolio-idir/images/logo.jpg",
   "navigations": [
     {
       "id": 1,
