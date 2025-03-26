@@ -2,7 +2,7 @@
   "name": "Idir Lahcen",
   "status": "Software Engineer",
   "description": "I am passionate and interested in the ever-growing field of Web Front-End development.I enjoy transforming designs into functional user interfaces using the latest tools and frameworks.",
-  "image" : "/next-portfolio-idir/images/logo.jpg",
+  "image": "/next-portfolio-idir/images/logo.jpg",
   "navigations": [
     {
       "id": 1,
@@ -146,8 +146,7 @@
       "id": 20,
       "name": "Node JS",
       "icon": "/next-portfolio-idir/images/nodejs.png"
-    }
-    ,
+    },
     {
       "id": 21,
       "name": "MongoDB",
@@ -211,7 +210,7 @@
         "stack": "React.js, Vite.js, CSS, API Key",
         "category": "Personal Project",
         "url": "https://github.com/idir2023/airline-reservation"
-      },      
+      },
       {
         "id": 7,
         "top": true,
@@ -237,10 +236,19 @@
         "name": "Syndicat Systeme",
         "stack": "Laravel ,JQuery , Tailwind CSS",
         "category": "Personal Project",
-        "url": "https://github.com/idir2023/Chat_real_use_react.js"
+        "url": "https://github.com/idir2023/Syndicat-amine"
+      },
+      {
+        "id": 10,
+        "top": true,
+        "image": "/next-portfolio-idir/images/avocat.PNG",
+        "name": "Syndicat Systeme",
+        "stack": "Laravel ,JQuery , Bootstrap",
+        "category": "Professional Project",
+        "url": "https://cabinethbavocats.com/"
       }
     ]
-  },  
+  },
   "contact": {
     "title": "Contact",
     "description": "Chat with me through some of the contacts you can call to get acquainted.",
@@ -293,7 +301,6 @@
         "category": "location",
         "url": "https://www.google.com/maps/place/Casablanca,+Maroc/@34.0208824,-6.8416507,12z/data=!3m1!4b1!4m10!1m2!2m1!1sbengaluru+maps!3m6!1s0xd9ab4c8dd61b29b:0x7d066e0b2ed730f!8m2!3d34.0208824!4d-6.8416507!15sCg5iZW5nYWx1cnUgbWFyY2BCB2xvY2FsaXRpY8gBAQHaHRtbA!16s%2Fg%2F11b6_x8psx"
       }
-      
     ]
   },
   "about": {
