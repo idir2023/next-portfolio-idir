@@ -250,7 +250,7 @@
       {
         "id": 11,
         "top": true,
-        "image": "/next-portfolio-idir/images/afrilavage.PNG",
+        "image": "/next-portfolio-idir/images/afrilavage.png",
         "name": "Afrilavage Systeme",
         "stack": "Laravel, JQuery, Tailwind CSS",
         "category": "Professional Project",
