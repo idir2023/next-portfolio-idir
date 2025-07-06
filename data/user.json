@@ -247,17 +247,15 @@
         "category": "Professional Project",
         "url": "https://cabinethbavocats.com/"
       },
-       {
+      {
         "id": 11,
         "top": true,
         "image": "/next-portfolio-idir/images/afrilavage.PNG",
         "name": "Afrilavage Systeme",
-        "stack": "Laravel ,JQuery , Tailwind CSS",
+        "stack": "Laravel, JQuery, Tailwind CSS",
         "category": "Professional Project",
         "url": "https://www.afrilavage.com/"
       }
-
-
     ]
   },
   "contact": {
