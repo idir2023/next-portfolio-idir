@@ -255,6 +255,15 @@
         "stack": "Laravel, JQuery, Tailwind CSS",
         "category": "Professional Project",
         "url": "https://www.afrilavage.com/"
+      },
+       {
+        "id": 12,
+        "top": true,
+        "image": "/next-portfolio-idir/images/invoicesPro.png",
+        "name": "AI Invoice Payment SaaS Platform",
+        "stack": "Next js, Supabase, Tailwind CSS ,Api",
+        "category": "Professional Project",
+        "url": "https://github.com/idir2023/invoices_management_2026"
       }
     ]
   },
