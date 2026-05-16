@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}"
+self.__REACT_LOADABLE_MANIFEST='{"pages\\\\_app.jsx -> ../lib/firebase":{"id":4331,"files":["static/chunks/467.04d00eebe0e2cd0c.js","static/chunks/331.a0096acc95660ceb.js"]}}';
