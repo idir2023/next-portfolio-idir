@@ -2,13 +2,23 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import USER from '../../data/user.json';
+import { useLanguage } from '../../context/LanguageContext';
 import AppToggle from '../atomics/AppToggle';
+import AppLanguageSwitcher from '../atomics/AppLanguageSwitcher';
+
+const navItems = [
+  { url: '/', key: 'nav.home' },
+  { url: '/projects', key: 'nav.projects' },
+  { url: '/experiences', key: 'nav.experiences' },
+  { url: '/about', key: 'nav.about' },
+  { url: '/contact', key: 'nav.contact' },
+];
 
 const AppNav = () => {
   const [isActiveNav, setIsActiveNav] = useState(false);
   const [isActiveToggler, setIsActiveToggler] = useState(false);
   const { pathname } = useRouter();
+  const { t } = useLanguage();
 
   const activeLink = (url) => {
     const className =
@@ -66,7 +76,7 @@ const AppNav = () => {
       </div>
 
       <ul
-        className={`flex transform transition duration-500 absolute lg:static 
+        className={`flex transform transition duration-500 absolute lg:static
          bg-white lg:bg-transparent left-3 right-3 border lg:border-none border-light-gray p-8 lg:p-0 space-y-4 lg:space-y-0 flex-col lg:flex-row space-x-0 lg:space-x-14 rounded-xl z-10
         ${
           isActiveToggler
@@ -74,19 +84,23 @@ const AppNav = () => {
             : 'translate-y-[-100vh] lg:translate-y-0'
         }`}
       >
-        {USER.navigations.map((item) => (
-          <li key={item.id}>
+        {navItems.map((item) => (
+          <li key={item.url}>
             <Link
               href={item.url}
               className={`text-sm text-center transition block py-3 lg:py-0 rounded-lg lg:bg-transparent tracking-widest ${activeLink(
                 item.url
               )}`}
             >
-              {item.name}
+              {t(item.key)}
             </Link>
           </li>
         ))}
       </ul>
+
+      <div className="hidden lg:block ml-4">
+        <AppLanguageSwitcher />
+      </div>
 
       <div
         onClick={handleToggler}

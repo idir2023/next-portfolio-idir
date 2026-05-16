@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { LanguageProvider } from '../context/LanguageContext';
 import '../styles/globals.css';
 
 const MyApp = ({ Component, pageProps }) => {
@@ -12,7 +13,11 @@ const MyApp = ({ Component, pageProps }) => {
     }
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <LanguageProvider>
+      <Component {...pageProps} />
+    </LanguageProvider>
+  );
 };
 
 export default MyApp;
