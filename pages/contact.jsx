@@ -7,19 +7,19 @@ import { useLanguage } from '../context/LanguageContext';
 const getIconColor = (platform) => {
   switch (platform) {
     case 'Instagram':
-      return 'bg-pink-500 text-white';
+      return 'from-pink-500 to-purple-500';
     case 'WhatsApp':
-      return 'bg-green-500 text-white';
+      return 'from-green-400 to-green-600';
     case 'GitHub':
-      return 'bg-black text-white';
+      return 'from-gray-700 to-gray-900';
     case 'Gmail':
-      return 'bg-red-500 text-white';
+      return 'from-red-400 to-red-600';
     case 'Location':
-      return 'bg-black text-white';
+      return 'from-blue-400 to-blue-600';
     case 'Linkedin':
-      return 'bg-blue-700 text-white';
+      return 'from-blue-600 to-blue-800';
     default:
-      return 'bg-primary text-white';
+      return 'from-primary to-secondary';
   }
 };
 
@@ -38,26 +38,23 @@ const Contact = () => {
         description={t('contact.description')}
       />
       <AppSection title={t('contact.connectWithMe')}>
-        <div className="bg-gradient-to-r from-blue-50 to-blue-100 py-16 px-4 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-            {USER.contact.contents.map((item) => (
-              <a
-                key={item.id}
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center border border-light-gray rounded-2xl p-6 bg-white shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105"
-              >
-                <div
-                  className={`w-16 h-16 rounded-full ${getIconColor(item.name)} grid place-items-center mb-4`}
-                >
-                  <i className={`${item.icon} text-2xl`} />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-800">{item.name}</h3>
-                <p className="text-sm text-gray-600">{item.username}</p>
-              </a>
-            ))}
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {USER.contact.contents.map((item, index) => (
+            <a
+              key={item.id}
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-card p-6 rounded-2xl text-center animate-slide-up"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${getIconColor(item.name)} flex items-center justify-center mb-4 mx-auto`}>
+                <i className={`${item.icon} text-xl text-white`} />
+              </div>
+              <h3 className="text-sm font-semibold text-light mb-1">{item.name}</h3>
+              <p className="text-xs text-muted truncate">{item.username}</p>
+            </a>
+          ))}
         </div>
       </AppSection>
     </AppShell>

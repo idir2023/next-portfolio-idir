@@ -10,17 +10,16 @@ const AppLanguageSwitcher = () => {
   ];
 
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex items-center gap-1 p-1 rounded-full bg-surface/50 border border-white/10">
       {languages.map((lang) => (
         <button
           key={lang.code}
           onClick={() => changeLanguage(lang.code)}
-          className={`w-8 h-8 text-xs font-bold rounded-full transition duration-300 ${
+          className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-300 ${
             language === lang.code
-              ? 'bg-primary text-white'
-              : 'bg-light-gray text-gray hover:bg-primary hover:text-white'
+              ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-lg'
+              : 'text-light/60 hover:text-light hover:bg-white/5'
           }`}
-          title={lang.label}
         >
           {lang.label}
         </button>

@@ -1,40 +1,30 @@
-import AppSection from '../components/molecules/AppSection';
 import AppHeader from '../components/organisms/AppHeader';
 import AppShell from '../components/templates/AppShell';
 import USER from '../data/user.json';
 import { useLanguage } from '../context/LanguageContext';
 
-const aboutTitles = {
-  en: {
-    myHistory: 'My History',
-    whatAmIDoing: 'What am I Doing',
-    whatNext: 'What Next',
-    dreamsAndWishes: 'Dreams and Wishes',
-  },
-  fr: {
-    myHistory: 'Mon Histoire',
-    whatAmIDoing: 'Ce que je fais',
-    whatNext: 'Ce que je vise',
-    dreamsAndWishes: 'Rêves et Souhaits',
-  },
-  ar: {
-    myHistory: 'تاريخي',
-    whatAmIDoing: 'ما أفعله حالياً',
-    whatNext: 'هدفي المستقبلي',
-    dreamsAndWishes: 'الأحلام والأماني',
-  },
-};
-
 const About = () => {
   const { t, language } = useLanguage();
 
-  const getTitle = (id) => {
-    const titles = aboutTitles[language];
-    const contentItem = USER.about.contents.find(item => item.id === id);
-    if (contentItem) {
-      return titles[contentItem.name] || contentItem.name;
-    }
-    return contentItem?.name || '';
+  const titleMap = {
+    en: {
+      'My History': t('about.myHistory'),
+      'What am i Doing': t('about.whatAmIDoing'),
+      'What Next': t('about.whatNext'),
+      'Dreams and Wishes': t('about.dreamsAndWishes'),
+    },
+    fr: {
+      'My History': t('about.myHistory'),
+      'What am i Doing': t('about.whatAmIDoing'),
+      'What Next': t('about.whatNext'),
+      'Dreams and Wishes': t('about.dreamsAndWishes'),
+    },
+    ar: {
+      'My History': t('about.myHistory'),
+      'What am i Doing': t('about.whatAmIDoing'),
+      'What Next': t('about.whatNext'),
+      'Dreams and Wishes': t('about.dreamsAndWishes'),
+    },
   };
 
   return (
@@ -44,13 +34,25 @@ const About = () => {
       keyword="about me, about, me, history"
     >
       <AppHeader title={t('about.title')} description={t('about.description')} />
-      {USER.about.contents.map((item) => (
-        <AppSection key={item.id} title={getTitle(item.id)}>
-          <p className="text-gray text-xs md:text-base leading-5 md:leading-8 text-center max-w-2xl lg:mx-auto">
-            {item.description}
-          </p>
-        </AppSection>
-      ))}
+      <div className="grid gap-6">
+        {USER.about.contents.map((item, index) => (
+          <div
+            key={item.id}
+            className="glass rounded-2xl p-8 animate-slide-up"
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
+            <h3 className="text-xl font-semibold text-light mb-4 flex items-center gap-3">
+              <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                <i className="fas fa-certificate text-white text-sm" />
+              </span>
+              {titleMap[language][item.name] || item.name}
+            </h3>
+            <p className="text-muted leading-relaxed">
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </div>
     </AppShell>
   );
 };

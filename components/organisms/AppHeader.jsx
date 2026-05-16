@@ -1,28 +1,28 @@
 import PropTypes from 'prop-types';
-import AppSection from '../molecules/AppSection';
+import { useLanguage } from '../../context/LanguageContext';
 
 const AppHeader = ({ title, description }) => {
-  const splitTitleCharColor = () => {
-    const titleBase = title.split('');
-    const titleStart = titleBase[0];
-    const titleEnd = titleBase.slice(1, titleBase.length).join('');
+  const { isRTL } = useLanguage();
 
-    return (
-      <h1 className="text-4xl lg:text-6xl font-bold text-black">
-        <span className="text-primary">{titleStart}</span>
-        {titleEnd}
-      </h1>
-    );
+  const getTitleColor = () => {
+    if (!title || title.length === 0) return { first: '', last: '' };
+    const first = title.charAt(0);
+    const rest = title.slice(1);
+    return { first, rest };
   };
+
+  const { first, rest } = getTitleColor();
+
   return (
-    <AppSection decoration={false} noSeparator>
-      <div className="mt-10 lg:mt-20 bg-light-gray p-7 lg:p-10 bg-opacity-30 rounded-lg lg:rounded-2xl text-center">
-        {splitTitleCharColor()}
-        <p className="text-xs lg:text-sm text-gray max-w-sm tracking-widest mt-3 lg:mt-5 mx-auto">
-          {description}
-        </p>
-      </div>
-    </AppSection>
+    <div className="text-center py-16">
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+        <span className="gradient-text">{first}</span>
+        <span className="text-light">{rest}</span>
+      </h1>
+      <p className={`text-muted text-lg max-w-2xl mx-auto leading-relaxed ${isRTL ? 'rtl:text-right' : ''}`}>
+        {description}
+      </p>
+    </div>
   );
 };
 

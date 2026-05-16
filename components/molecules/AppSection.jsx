@@ -1,27 +1,23 @@
 import PropTypes from 'prop-types';
-import AppDecoration from '../atomics/AppDecoration';
 
-const AppSection = ({ title, children, decoration, noSeparator }) => {
-  const splitTitleColor = () => {
-    const titleBase = title.split(' ');
-    const titleStart = titleBase.slice(0, -1).join(' ');
-    const titleEnd = titleBase.pop();
-    return (
-      <h2 className="text-xl lg:text-2xl font-bold mb-0 text-center">
-        {titleStart}
-        <span className="text-primary"> {titleEnd}</span>
-      </h2>
-    );
+const AppSection = ({ title, children, noSeparator }) => {
+  const getTitleColor = () => {
+    const words = title.split(' ');
+    if (words.length > 1) {
+      const lastWord = words.pop();
+      return { first: words.join(' '), last: lastWord };
+    }
+    return { first: '', last: title };
   };
 
+  const { first, last } = getTitleColor();
+
   return (
-    <section
-      className={`py-10 lg:py-16 px-3 ${
-        noSeparator || 'border-b border-light-gray border-opacity-50'
-      }`}
-    >
-      {splitTitleColor(title)}
-      {decoration && <AppDecoration type="threeline" />}
+    <section className={`py-16 ${!noSeparator ? 'border-b border-white/10' : ''}`}>
+      <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
+        {first && <span className="text-light">{first} </span>}
+        <span className="gradient-text">{last}</span>
+      </h2>
       {children}
     </section>
   );
@@ -29,13 +25,11 @@ const AppSection = ({ title, children, decoration, noSeparator }) => {
 
 AppSection.propTypes = {
   title: PropTypes.string,
-  decoration: PropTypes.bool,
   noSeparator: PropTypes.bool,
 };
 
 AppSection.defaultProps = {
   title: '',
-  decoration: true,
   noSeparator: false,
 };
 

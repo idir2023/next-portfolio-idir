@@ -8,10 +8,12 @@ import AppSignature from '../organisms/AppSignature';
 import AppCtaSection from '../molecules/AppCtaSection';
 import AppHero from '../molecules/AppHero';
 import AppFooter from '../atomics/AppFooter';
+import AnimatedBackground from '../atomics/AnimatedBackground';
 
 const AppShell = ({ title, keyword, description, hero, cta, children }) => (
   <>
     <AppHead title={title} description={description} keyword={keyword} />
+    <AnimatedBackground />
     <AppNav />
     <AppDecoration />
     <AppSide />
@@ -35,8 +37,7 @@ AppShell.propTypes = {
 
 AppShell.defaultProps = {
   title: 'Idir Lahcen',
-  description:
-    'I am a freelancer from Morroco, who focuses on web development, especially Back-End web development.',
+  description: 'I am a software engineer specializing in web development.',
   keyword: '',
   hero: false,
   cta: true,

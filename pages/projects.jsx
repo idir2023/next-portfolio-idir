@@ -19,9 +19,15 @@ const Project = () => {
         description={t('projects.description')}
       />
       <AppSection title={t('projects.personal')}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6">
-          {USER.project.contents.map((item) => (
-            <AppProject key={item.id} project={item} />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {USER.project.contents.map((item, index) => (
+            <div
+              key={item.id}
+              className="project-card rounded-2xl overflow-hidden animate-slide-up"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <AppProject project={item} />
+            </div>
           ))}
         </div>
       </AppSection>
