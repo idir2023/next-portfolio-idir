@@ -2,7 +2,7 @@
   "name": "Idir Lahcen",
   "status": "Software Engineer",
   "description": "I am passionate and interested in the ever-growing field of Web Front-End development.I enjoy transforming designs into functional user interfaces using the latest tools and frameworks.",
-  "image": "/next-portfolio-idir/images/logo.jpg",
+  "image": "/images/logo.jpg",
   "navigations": [
     {
       "id": 1,
@@ -35,122 +35,122 @@
       "id": 2,
       "name": "Website Development",
       "description": "We offer complete website development services, transforming your designs into fully functional, visually appealing websites. Our focus is on optimizing the user experience and ensuring excellent performance across all platforms.",
-      "icon": "/next-portfolio-idir/images/service-website.svg"
+      "icon": "/images/service-website.svg"
     },
     {
       "id": 3,
       "name": "Web Application Development",
       "description": "Our team specializes in developing robust, feature-rich web applications that offer seamless user interactions and high performance. We ensure scalability and security to meet the growing demands of your business.",
-      "icon": "/next-portfolio-idir/images/service-webapps.svg"
+      "icon": "/images/service-webapps.svg"
     },
     {
       "id": 4,
       "name": "Responsive Design",
       "description": "We create responsive designs that adapt flawlessly to any device, including mobile, tablet, and desktop. Our designs ensure a consistent and engaging user experience, no matter the screen size or resolution.",
-      "icon": "/next-portfolio-idir/images/service-rwd.svg"
+      "icon": "/images/service-rwd.svg"
     },
     {
       "id": 5,
       "name": "Performance Optimization",
       "description": "We focus on enhancing the performance of websites and web applications, ensuring faster loading times and smooth interactions. By optimizing code and leveraging the latest technologies, we deliver high-performing solutions that improve user satisfaction and engagement.",
-      "icon": "/next-portfolio-idir/images/service-performance.svg"
+      "icon": "/images/service-performance.svg"
     }
   ],
   "skills": [
     {
       "id": 1,
       "name": "HTML 5",
-      "icon": "/next-portfolio-idir/images/skill-html5.svg"
+      "icon": "/images/skill-html5.svg"
     },
     {
       "id": 2,
       "name": "CSS 3",
-      "icon": "/next-portfolio-idir/images/skill-css3.svg"
+      "icon": "/images/skill-css3.svg"
     },
     {
       "id": 3,
       "name": "Javascript",
-      "icon": "/next-portfolio-idir/images/skill-javascript.svg"
+      "icon": "/images/skill-javascript.svg"
     },
     {
       "id": 4,
       "name": "TailwindCss",
-      "icon": "/next-portfolio-idir/images/skill-tailwindcss.svg"
+      "icon": "/images/skill-tailwindcss.svg"
     },
     {
       "id": 5,
       "name": "Laravel",
-      "icon": "/next-portfolio-idir/images/laravel.png"
+      "icon": "/images/laravel.png"
     },
     {
       "id": 6,
       "name": "Bootstrap 5",
-      "icon": "/next-portfolio-idir/images/bootstrap-logo.svg"
+      "icon": "/images/bootstrap-logo.svg"
     },
     {
       "id": 7,
       "name": "React JS",
-      "icon": "/next-portfolio-idir/images/skill-reactjs.svg"
+      "icon": "/images/skill-reactjs.svg"
     },
     {
       "id": 8,
       "name": "Next JS",
-      "icon": "/next-portfolio-idir/images/skill-nextjs.svg"
+      "icon": "/images/skill-nextjs.svg"
     },
     {
       "id": 9,
       "name": "Firebase",
-      "icon": "/next-portfolio-idir/images/skill-firebase.svg"
+      "icon": "/images/skill-firebase.svg"
     },
     {
       "id": 10,
       "name": "Git",
-      "icon": "/next-portfolio-idir/images/skill-git.svg"
+      "icon": "/images/skill-git.svg"
     },
     {
       "id": 11,
       "name": "Github",
-      "icon": "/next-portfolio-idir/images/skill-github.svg"
+      "icon": "/images/skill-github.svg"
     },
     {
       "id": 13,
       "name": "Sql",
-      "icon": "/next-portfolio-idir/images/skill-sql.png"
+      "icon": "/images/skill-sql.png"
     },
     {
       "id": 14,
       "name": "Vite JS",
-      "icon": "/next-portfolio-idir/images/vitejs.svg"
+      "icon": "/images/vitejs.svg"
     },
     {
       "id": 15,
       "name": "Java",
-      "icon": "/next-portfolio-idir/images/java.png"
+      "icon": "/images/java.png"
     },
     {
       "id": 16,
       "name": "Visual Studio Code",
-      "icon": "/next-portfolio-idir/images/vscode.png"
+      "icon": "/images/vscode.png"
     },
     {
       "id": 18,
       "name": "Linux",
-      "icon": "/next-portfolio-idir/images/Linux.png"
+      "icon": "/images/Linux.png"
     },
     {
       "id": 19,
       "name": "C++",
-      "icon": "/next-portfolio-idir/images/c++.png"
+      "icon": "/images/c++.png"
     },
     {
       "id": 20,
       "name": "Node JS",
-      "icon": "/next-portfolio-idir/images/nodejs.png"
+      "icon": "/images/nodejs.png"
     },
     {
       "id": 21,
       "name": "MongoDB",
-      "icon": "/next-portfolio-idir/images/mongodb.png"
+      "icon": "/images/mongodb.png"
     }
   ],
   "project": {
@@ -160,7 +160,7 @@
       {
         "id": 1,
         "top": false,
-        "image": "/next-portfolio-idir/images/work-2.png",
+        "image": "/images/work-2.png",
         "name": "Hospital Management",
         "stack": "HTML, CSS, PHP, JavaScript",
         "category": "Personal Project",
@@ -169,7 +169,7 @@
       {
         "id": 2,
         "top": false,
-        "image": "/next-portfolio-idir/images/invoice.png",
+        "image": "/images/invoice.png",
         "name": "Invoices Management",
         "stack": "JQuery, CSS, Laravel",
         "category": "Personal Project",
@@ -178,7 +178,7 @@
       {
         "id": 3,
         "top": false,
-        "image": "/next-portfolio-idir/images/work-7.png",
+        "image": "/images/work-7.png",
         "name": "WhatsApp Portfolio",
         "stack": "Javascript JS, CSS",
         "category": "Personal Project",
@@ -187,7 +187,7 @@
       {
         "id": 4,
         "top": true,
-        "image": "/next-portfolio-idir/images/task_app.png",
+        "image": "/images/task_app.png",
         "name": "Task Website",
         "stack": "JQuery, CSS, Laravel",
         "category": "Personal Project",
@@ -196,7 +196,7 @@
       {
         "id": 5,
         "top": true,
-        "image": "/next-portfolio-idir/images/portfolio_react.png",
+        "image": "/images/portfolio_react.png",
         "name": "My Portfolio",
         "stack": "Next js",
         "category": "Personal Project",
@@ -205,7 +205,7 @@
       {
         "id": 6,
         "top": true,
-        "image": "/next-portfolio-idir/images/airline.png",
+        "image": "/images/airline.png",
         "name": "Airline Reservation",
         "stack": "React.js, Vite.js, CSS, API Key",
         "category": "Personal Project",
@@ -214,7 +214,7 @@
       {
         "id": 7,
         "top": true,
-        "image": "/next-portfolio-idir/images/work-1.png",
+        "image": "/images/work-1.png",
         "name": "Online Recruitment",
         "stack": "HTML, CSS, PHP, JavaScript",
         "category": "Personal Project",
@@ -223,7 +223,7 @@
       {
         "id": 8,
         "top": true,
-        "image": "/next-portfolio-idir/images/chat_app.png",
+        "image": "/images/chat_app.png",
         "name": "Chat App",
         "stack": "React JS, Vite JS, CSS, Html",
         "category": "Personal Project",
@@ -232,7 +232,7 @@
       {
         "id": 9,
         "top": true,
-        "image": "/next-portfolio-idir/images/syndichat.png",
+        "image": "/images/syndichat.png",
         "name": "Syndicat Systeme",
         "stack": "Laravel ,JQuery , Tailwind CSS",
         "category": "Personal Project",
@@ -241,7 +241,7 @@
       {
         "id": 10,
         "top": true,
-        "image": "/next-portfolio-idir/images/avocat.PNG",
+        "image": "/images/avocat.PNG",
         "name": "Avocat Systeme",
         "stack": "Laravel ,JQuery , Bootstrap",
         "category": "Professional Project",
@@ -250,7 +250,7 @@
       {
         "id": 11,
         "top": true,
-        "image": "/next-portfolio-idir/images/afrilavage.png",
+        "image": "/images/afrilavage.png",
         "name": "Afrilavage Systeme",
         "stack": "Laravel, JQuery, Tailwind CSS",
         "category": "Professional Project",
@@ -259,7 +259,7 @@
        {
         "id": 12,
         "top": true,
-        "image": "/next-portfolio-idir/images/invoicesPro.png",
+        "image": "/images/invoicesPro.png",
         "name": "AI Invoice Payment SaaS Platform",
         "stack": "Next js, Supabase, Tailwind CSS ,Api",
         "category": "Professional Project",

@@ -9,9 +9,9 @@
   "description": "My Personal Portfolio Website",
   "icons": [
     {
-      "src": "/next-portfolio-idir/images/Syed Logo.png",
+      "src": "/images/logo.jpg",
       "sizes": "192x192",
-      "type": "image/svg"
+      "type": "image/png"
     }
   ]
 }

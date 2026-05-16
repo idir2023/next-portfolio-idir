@@ -1,6 +1,4 @@
 module.exports = {
-  basePath: '/next-portfolio-idir',
-  assetPrefix: '/next-portfolio-idir',
   images: {
     remotePatterns: [
       {

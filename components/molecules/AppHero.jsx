@@ -36,7 +36,7 @@ const AppHero = () => (
             </p>
             <AppButton
               title="Resume download"
-              href="/next-portfolio-idir/images/cv.pdf"
+              href="/images/cv.pdf"
               download="cv.pdf"
             />
           </div>
