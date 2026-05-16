@@ -1,10 +1,21 @@
 import AppHeader from '../components/organisms/AppHeader';
 import AppShell from '../components/templates/AppShell';
-import USER from '../data/exp.json';
 import { useLanguage } from '../context/LanguageContext';
+import USER from '../data/exp.json';
 
 const Resume = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  // Get translations or use default data based on language
+  let experienceData;
+
+  if (language === 'fr') {
+    const frData = t('experiences.contents');
+    experienceData = frData || USER.experiences.contents;
+  } else {
+    // For English and Arabic, use default data from JSON
+    experienceData = USER.experiences.contents;
+  }
 
   return (
     <AppShell
@@ -17,7 +28,7 @@ const Resume = () => {
         description={t('experiences.description')}
       />
       <div className="space-y-8">
-        {USER.experiences.contents.map((item, index) => (
+        {experienceData && experienceData.map((item, index) => (
           <div
             key={item.id}
             className="animate-slide-up"
@@ -47,8 +58,8 @@ const Resume = () => {
                   <p className="text-muted text-sm mb-3">{subItem.description}</p>
                   {subItem.list && (
                     <ul className="space-y-2">
-                      {subItem.list.map((listItem) => (
-                        <li key={listItem.id} className="flex items-start gap-2 text-muted text-sm">
+                      {subItem.list.map((listItem, i) => (
+                        <li key={i} className="flex items-start gap-2 text-muted text-sm">
                           <i className="fas fa-check-circle text-accent mt-1" />
                           <span>{listItem.name}</span>
                         </li>

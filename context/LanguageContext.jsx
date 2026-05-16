@@ -105,8 +105,52 @@ const translations = {
     experiences: {
       title: 'Expériences',
       description: 'Mon parcours professionnel.',
-      workExperience: 'Expériences',
+      workExperience: 'Expériences Professionnelles',
       education: 'Formation',
+      contents: [
+        {
+          title: 'Mes Expériences Professionnelles',
+          items: [
+            {
+              timestamp: '01 Jan 2023 - 01 Sep 2024',
+              name: 'Fiverr',
+              info: 'Développeur Web Freelance',
+              description: 'Travail en tant que développeur web back-end et front-end à distance.',
+              list: [
+                { name: 'Création d\'interfaces utilisateur engageantes avec NextJS, SCSS et React.' }
+              ]
+            },
+            {
+              timestamp: '01 Avr 2023 - 01 Jun 2023',
+              name: 'Projet de Fin d\'étude',
+              info: 'Développeur Web Full Stack',
+              description: 'Développement d\'un système de gestion hospitalière avec PHP, JavaScript, HTML et CSS.',
+              list: [
+                { name: 'Création d\'interfaces utilisateur avec HTML, CSS et Bootstrap.' },
+                { name: 'Développement d\'applications front-end responsives et implémentation PHP.' }
+              ]
+            },
+            {
+              timestamp: '01 Oct 2023 - 15 Jun 2024',
+              name: 'Mandi Tech Info',
+              info: 'Ingénieur Logiciel',
+              description: 'Résolution d\'erreurs et ajout de nouvelles tâches au système de gestion de stock.',
+              list: [
+                { name: 'Collaboration avec les partenaires internes et externes.' }
+              ]
+            },
+            {
+              timestamp: '01 Fév 2023 - 01 Mai 2023',
+              name: 'FST',
+              info: 'Ingénieur Logiciel',
+              description: 'Création d\'un système de recrutement en ligne avec PHP, JavaScript, HTML et CSS.',
+              list: [
+                { name: 'Évaluation et retour sur les écrits générés par l\'IA.' }
+              ]
+            }
+          ]
+        }
+      ]
     },
     contact: {
       title: 'Contact',
@@ -168,10 +212,54 @@ const translations = {
       dreamsAndWishesDesc: 'أسعى للانضمام إلى شركات مرموقة مثل Google أو Microsoft،Targeting أدوار في هندسة تطوير البرمجيات أو تطوير الواجهة الأمامية. أنا ملزم بهذه الفرصة، وأعمل باستمرار على تعزيز مهاراتي ومعرفتي حتى أ дости أهدافي. هدفي النهائي هو أن أصبح مصدر إلهام للآخرين وأعمل كمعلم.',
     },
     experiences: {
-      title: 'الخبرات',
-      description: 'مساري المهني.',
-      workExperience: 'الخبرات',
-      education: 'التعليم',
+      title: 'Experiences',
+      description: 'My work experience.',
+      workExperience: 'My Work Experiences',
+      education: 'Education',
+      contents: [
+        {
+          title: 'My Work Experiences',
+          items: [
+            {
+              timestamp: '01 Jan 2023 - 01 Sep 2024',
+              name: 'Fiverr',
+              info: 'Freelance Web Developer',
+              description: 'Started freelancing as a remote back-end & front-end developer.',
+              list: [
+                { name: 'Crafting engaging user interfaces with NextJS, SCSS, and React.' }
+              ]
+            },
+            {
+              timestamp: '01 Apr 2023 - 01 Jun 2023',
+              name: 'Project Fin d\'étude',
+              info: 'Full Stack Web Developer',
+              description: 'Developed a hospital management system with multiple functionalities.',
+              list: [
+                { name: 'Crafting engaging user interfaces with HTML, CSS, and Bootstrap.' },
+                { name: 'Developing front-end responsive applications and implementing PHP.' }
+              ]
+            },
+            {
+              timestamp: '01 Oct 2023 - 15 Jun 2024',
+              name: 'Mandi Tech Info',
+              info: 'Software Engineer',
+              description: 'Resolved errors, added new tasks to the stock management system.',
+              list: [
+                { name: 'Collaborated with internal and outsourced partners on software development.' }
+              ]
+            },
+            {
+              timestamp: '01 Feb 2023 - 01 May 2023',
+              name: 'FST',
+              info: 'Software Engineer',
+              description: 'Built an online recruitment system with web technologies.',
+              list: [
+                { name: 'Evaluated and provided feedback on AI-generated writing.' }
+              ]
+            }
+          ]
+        }
+      ]
     },
     contact: {
       title: 'اتصال',
