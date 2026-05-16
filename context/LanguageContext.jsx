@@ -12,56 +12,56 @@ const translations = {
       contact: 'Contact',
     },
     home: {
-      whatCanIDo: 'What can I do',
-      skillsTechnology: 'Skills & Technology',
-      projectsCompleted: "Projects I've Completed",
-      showAllProjects: 'Show all my projects',
+      whatCanIDo: 'What I Do',
+      skillsTechnology: 'Skills',
+      projectsCompleted: 'My Projects',
+      showAllProjects: 'View All',
       hiIm: "Hi, I'm",
-      resume: 'Resume download',
+      resume: 'Resume',
     },
     projects: {
       title: 'Projects',
-      description: 'Some of the projects that I\'ve completed using various technologies.',
+      description: 'Some projects I have completed.',
       personal: 'Personal Projects',
       professional: 'Professional Projects',
     },
     about: {
       title: 'About',
-      description: 'Get acquainted further about me, story and biography of my life',
-      myHistory: 'My History',
-      whatAmIDoing: 'What am I Doing',
-      whatNext: 'What Next',
-      dreamsAndWishes: 'Dreams and Wishes',
+      description: 'Learn more about me.',
+      myHistory: 'My Story',
+      whatAmIDoing: 'What I Do',
+      whatNext: 'My Goals',
+      dreamsAndWishes: 'My Dreams',
     },
     experiences: {
       title: 'Experiences',
-      description: 'Explore my work experiences and projects.',
-      workExperience: 'My Work Experiences',
-      education: 'My Education',
+      description: 'My work experience.',
+      workExperience: 'Experience',
+      education: 'Education',
     },
     contact: {
       title: 'Contact',
-      description: 'Chat with me through some of the contacts you can call to get acquainted.',
-      connectWithMe: 'Connect With Me',
+      description: 'Feel free to reach out.',
+      connectWithMe: 'Contact Me',
     },
     common: {
-      getInTouch: 'GET IN TOUCH',
-      ctaText: 'Is there anything I can help you with? My inbox and social media are always open to you, feel free to ask, I will try my best for you. Thank you for visiting.',
-      sayHola: 'Say Hola..',
-      designBy: 'Design & Build With',
-      techStack: 'Design with ReactJS + NextJS + Tailwindcss',
-      copyright: 'copyright',
-      warmGreetings: 'warm greetings from Idir Lahcen',
+      getInTouch: 'Get In Touch',
+      ctaText: 'Have a question? Feel free to ask.',
+      sayHola: 'Say Hi',
+      designBy: 'Created by',
+      techStack: 'ReactJS + NextJS + Tailwindcss',
+      copyright: '©',
+      warmGreetings: 'Idir Lahcen',
     },
     services: {
-      websiteDev: 'Website Development',
-      websiteDevDesc: 'We offer complete website development services, transforming your designs into fully functional, visually appealing websites.',
-      webAppDev: 'Web Application Development',
-      webAppDevDesc: 'Our team specializes in developing robust, feature-rich web applications.',
+      websiteDev: 'Web Development',
+      websiteDevDesc: 'Complete website development services.',
+      webAppDev: 'Web Apps',
+      webAppDevDesc: 'Robust web application development.',
       responsiveDesign: 'Responsive Design',
-      responsiveDesignDesc: 'We create responsive designs that adapt flawlessly to any device.',
-      performance: 'Performance Optimization',
-      performanceDesc: 'We focus on enhancing the performance of websites and web applications.',
+      responsiveDesignDesc: 'Adaptive design for all devices.',
+      performance: 'Performance',
+      performanceDesc: 'Performance optimization.',
     },
   },
   fr: {
@@ -73,56 +73,56 @@ const translations = {
       contact: 'Contact',
     },
     home: {
-      whatCanIDo: 'Ce que je peux faire',
-      skillsTechnology: 'Compétences & Technologies',
-      projectsCompleted: 'Projets realizados',
-      showAllProjects: 'Voir tous mes projets',
+      whatCanIDo: 'Ce que je fais',
+      skillsTechnology: 'Compétences',
+      projectsCompleted: 'Mes Projets',
+      showAllProjects: 'Voir tout',
       hiIm: 'Bonjour, je suis',
-      resume: 'Télécharger CV',
+      resume: 'CV',
     },
     projects: {
       title: 'Projets',
-      description: 'Alguns projetos que completei usando várias tecnologias.',
-      personal: 'Projets Personnels',
-      professional: 'Projets Professionnels',
+      description: 'Quelques projets réalisés.',
+      personal: 'Projets Perso',
+      professional: 'Projets Pro',
     },
     about: {
       title: 'À propos',
-      description: 'Apprenez-en plus sur moi, mon histoire et ma biographie.',
-      myHistory: 'Mon Histoire',
+      description: 'En savoir plus sur moi.',
+      myHistory: 'Mon Parcours',
       whatAmIDoing: 'Ce que je fais',
-      whatNext: 'Ce que je vise',
-      dreamsAndWishes: 'Rêves et Souhaits',
+      whatNext: 'Objectifs',
+      dreamsAndWishes: 'Rêves',
     },
     experiences: {
       title: 'Expériences',
-      description: 'Explorez mes expériences professionnelles et projets.',
-      workExperience: 'Mon Expérience Professionnelle',
-      education: 'Mon Éducation',
+      description: 'Mon parcours professionnel.',
+      workExperience: 'Expériences',
+      education: 'Formation',
     },
     contact: {
       title: 'Contact',
-      description: 'Discutez avec moi via certains des contacts.',
-      connectWithMe: 'Contactez-moi',
+      description: 'N\'hésitez pas à me contacter.',
+      connectWithMe: 'Me contacter',
     },
     common: {
-      getInTouch: 'ENTRER EN CONTACT',
-      ctaText: 'Y a-t-il quelque chose qui peut vous aider? Ma boîte de réception et mes réseaux sociaux sont toujours ouverts.',
-      sayHola: 'Dire Bonjour..',
-      designBy: 'Conçu et développé par',
-      techStack: 'Développé avec ReactJS + NextJS + Tailwindcss',
-      copyright: 'droits d\'auteur',
-      warmGreetings: 'salutations cordiales de Idir Lahcen',
+      getInTouch: 'Contact',
+      ctaText: 'Vous avez une question? Écrivez-moi.',
+      sayHola: 'Dire bonjour',
+      designBy: 'Créé par',
+      techStack: 'ReactJS + NextJS + Tailwindcss',
+      copyright: '©',
+      warmGreetings: 'Idir Lahcen',
     },
     services: {
-      websiteDev: 'Développement Web',
-      websiteDevDesc: 'Nous offrons des services complète de développement web, transformant vos designs en sites fonctionnels.',
-      webAppDev: 'Développement d\'Applications Web',
-      webAppDevDesc: 'Notre équipe spécialise dans le développement d\'applications web robustes et riches en fonctionnalités.',
-      responsiveDesign: 'Design Responsive',
-      responsiveDesignDesc: 'Nous créons des designs adaptatifs qui fonctionnent parfaitement sur tous les appareils.',
-      performance: 'Optimisation des Performances',
-      performanceDesc: 'Nous concentrons sur l\'amélioration des performances des sites et applications web.',
+      websiteDev: 'Web',
+      websiteDevDesc: 'Création de sites web.',
+      webAppDev: 'Apps Web',
+      webAppDevDesc: 'Développement d\'apps web.',
+      responsiveDesign: 'Responsive',
+      responsiveDesignDesc: 'Design adaptatif.',
+      performance: 'Performance',
+      performanceDesc: 'Optimisation.',
     },
   },
   ar: {
@@ -131,59 +131,59 @@ const translations = {
       projects: 'المشاريع',
       experiences: 'الخبرات',
       about: 'عني',
-      contact: 'اتصل بي',
+      contact: 'اتصال',
     },
     home: {
-      whatCanIDo: 'ما الذي يمكنني تقديمه',
-      skillsTechnology: 'المهارات والتقنيات',
-      projectsCompleted: 'المشاريع المكتملة',
-      showAllProjects: 'شاهد جميع مشاريعي',
+      whatCanIDo: 'ماذا أفعل',
+      skillsTechnology: 'المهارات',
+      projectsCompleted: 'مشاريعي',
+      showAllProjects: 'عرض الكل',
       hiIm: 'أهلاً، أنا',
-      resume: 'تحميل السيرة الذاتية',
+      resume: 'السيرة',
     },
     projects: {
       title: 'المشاريع',
-      description: 'بعض المشاريع المكتملة باستخدام تقنيات مختلفة.',
-      personal: 'المشاريع الشخصية',
-      professional: 'المشاريع المهنية',
+      description: 'بعض مشايعي.',
+      personal: 'شخصي',
+      professional: 'مهني',
     },
     about: {
-      title: 'عنّي',
-      description: 'تعرّف أكثر على قصتي وسيرتي الذاتية.',
-      myHistory: 'تاريخي',
-      whatAmIDoing: 'ما أفعله حالياً',
-      whatNext: 'هدفي المستقبلي',
-      dreamsAndWishes: 'الأحلام والأماني',
+      title: 'عني',
+      description: 'اعرف المزيد عني.',
+      myHistory: 'قصتي',
+      whatAmIDoing: 'ما أفعله',
+      whatNext: 'أهدافي',
+      dreamsAndWishes: 'أحلامي',
     },
     experiences: {
       title: 'الخبرات',
-      description: 'استكشف خبراتي ومشاريعي.',
-      workExperience: 'خبراتي العملية',
-      education: 'تعليمي',
+      description: 'مساري المهني.',
+      workExperience: 'الخبرات',
+      education: 'التعليم',
     },
     contact: {
-      title: 'اتصل بي',
-      description: 'تواصل معي عبر وسائل التواصل الاجتماعي.',
-      contactWithMe: 'تواصل معي',
+      title: 'اتصال',
+      description: 'تواصل معي.',
+      connectWithMe: 'تواصل معي',
     },
     common: {
-      getInTouch: 'تواصل معي',
-      ctaText: 'هل هناك شيء يمكنني مساعدتك فيه؟صندوق الو البريد ووسائل التواصل الاجتماعي مفتوحة دائماً.',
-      sayHola: 'قل مرحباً..',
-      designBy: 'تصميم وبناء بـ',
-      techStack: 'مصمم بـ ReactJS + NextJS + Tailwindcss',
-      copyright: 'حقوق النشر',
-      warmGreetings: 'تحيات حارة من إيدير لحسن',
+      getInTouch: 'تواصل',
+      ctaText: 'لديك سؤال؟ تواصل معي.',
+      sayHola: 'مرحباً',
+      designBy: 'صممه',
+      techStack: 'ReactJS + NextJS + Tailwindcss',
+      copyright: '©',
+      warmGreetings: 'إيدير لحسن',
     },
     services: {
-      websiteDev: 'تطوير المواقع',
-      websiteDevDesc: 'نقدم خدمات تطوير مواقع كاملة،حويل تصاميمك إلى مواقع وظيفية وجذابة.',
-      webAppDev: 'تطوير تطبيقات الويب',
-      webAppDevDesc: 'فريقنا متخصص في تطوير تطبيقات ويب قوية وغنية بالميزات.',
-      responsiveDesign: 'التصميم المتجاوب',
-      responsiveDesignDesc: 'نصمم تصاميم متجاوبة تعمل بشكل مثالي على جميع الأجهزة.',
-      performance: 'تحسين الأداء',
-      performanceDesc: 'نركّز على تحسين أداء المواقع والتطبيقات.',
+      websiteDev: 'المواقع',
+      websiteDevDesc: 'تطوير المواقع.',
+      webAppDev: 'التطبيقات',
+      webAppDevDesc: 'تطبيقات الويب.',
+      responsiveDesign: 'متجاوب',
+      responsiveDesignDesc: 'تصميم متجاوب.',
+      performance: 'الأداء',
+      performanceDesc: 'تحسين الأداء.',
     },
   },
 };
@@ -192,16 +192,20 @@ export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState('en');
 
   useEffect(() => {
-    const savedLang = localStorage.getItem('portfolio-language');
-    if (savedLang && ['en', 'fr', 'ar'].includes(savedLang)) {
-      setLanguage(savedLang);
+    if (typeof window !== 'undefined') {
+      const savedLang = localStorage.getItem('portfolio-language');
+      if (savedLang && ['en', 'fr', 'ar'].includes(savedLang)) {
+        setLanguage(savedLang);
+      }
     }
   }, []);
 
   const changeLanguage = (lang) => {
     if (['en', 'fr', 'ar'].includes(lang)) {
       setLanguage(lang);
-      localStorage.setItem('portfolio-language', lang);
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('portfolio-language', lang);
+      }
     }
   };
 
@@ -218,7 +222,7 @@ export const LanguageProvider = ({ children }) => {
 
   return (
     <LanguageContext.Provider value={{ language, changeLanguage, t, isRTL }}>
-      <div dir={isRTL ? 'rtl' : 'ltr'}>
+      <div dir={isRTL ? 'rtl' : 'ltr'} className={language}>
         {children}
       </div>
     </LanguageContext.Provider>

@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+/* RTL Support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .ml-2 { margin-left: 0; margin-right: 0.5rem; }
+[dir="rtl"] .ml-3 { margin-left: 0; margin-right: 0.75rem; }
+[dir="rtl"] .ml-4 { margin-left: 0; margin-right: 1rem; }
+[dir="rtl"] .ml-6 { margin-left: 0; margin-right: 1.5rem; }
+[dir="rtl"] .mr-2 { margin-right: 0; margin-left: 0.5rem; }
+[dir="rtl"] .mr-3 { margin-right: 0; margin-left: 0.75rem; }
+[dir="rtl"] .mr-4 { margin-right: 0; margin-left: 1rem; }
+[dir="rtl"] .mr-6 { margin-right: 0; margin-left: 1.5rem; }
+[dir="rtl"] .mr-0 { margin-right: 0; margin-left: 0; }
+[dir="rtl"] .lg\:mr-6 { margin-right: 0; margin-left: 1.5rem; }
+
+/* Flex and Grid fixes */
+[dir="rtl"] .flex-row { flex-direction: row; }
+[dir="rtl"] .lg\:flex-row { flex-direction: row; }
+
+/* Language Switcher spacing */
+[dir="rtl"] .ml-4 { margin-left: 0; }
+
+/* Prevent text overflow issues */
+.tracking-widest {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Service cards fix */
 .decoration::after {
   content: '';
   @apply hidden xl:block absolute top-0 -left-10 w-px h-60 bg-light-gray;
@@ -9,4 +39,27 @@
 .decoration::before {
   content: '';
   @apply hidden xl:block absolute bottom-0 -right-10 w-px h-60 bg-light-gray;
+}
+
+/* Responsive text adjustments */
+.text-sm, .text-xs {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Nav menu adjustments */
+[dir="rtl"] .space-x-14 > :not([hidden]) ~ :not([hidden]) {
+  margin-right: 0;
+  margin-left: 3.5rem;
+}
+
+/* Button min-width */
+.min-w-\[200px\] {
+  min-width: 150px;
+  white-space: nowrap;
+}
+
+/* Better RTL support for buttons */
+[dir="rtl"] .min-w-\[200px\] {
+  min-width: 140px;
 }

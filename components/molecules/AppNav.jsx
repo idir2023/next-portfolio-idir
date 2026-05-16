@@ -18,7 +18,7 @@ const AppNav = () => {
   const [isActiveNav, setIsActiveNav] = useState(false);
   const [isActiveToggler, setIsActiveToggler] = useState(false);
   const { pathname } = useRouter();
-  const { t } = useLanguage();
+  const { t, isRTL } = useLanguage();
 
   const activeLink = (url) => {
     const className =
@@ -77,28 +77,30 @@ const AppNav = () => {
 
       <ul
         className={`flex transform transition duration-500 absolute lg:static
-         bg-white lg:bg-transparent left-3 right-3 border lg:border-none border-light-gray p-8 lg:p-0 space-y-4 lg:space-y-0 flex-col lg:flex-row space-x-0 lg:space-x-14 rounded-xl z-10
-        ${
-          isActiveToggler
-            ? 'translate-y-[250px]'
-            : 'translate-y-[-100vh] lg:translate-y-0'
-        }`}
+         bg-white lg:bg-transparent left-3 right-3 border lg:border-none border-light-gray p-8 lg:p-0 space-y-4 lg:space-y-0 flex-col lg:flex-row rounded-xl z-10
+        ${isRTL ? 'space-x-reverse' : ''}
+        ${isActiveToggler ? 'translate-y-0' : 'translate-y-[-100vh] lg:translate-y-0'}`}
+        style={{ gap: isRTL ? '0' : '0' }}
       >
         {navItems.map((item) => (
           <li key={item.url}>
             <Link
               href={item.url}
-              className={`text-sm text-center transition block py-3 lg:py-0 rounded-lg lg:bg-transparent tracking-widest ${activeLink(
+              className={`text-sm text-center transition block py-3 lg:py-0 rounded-lg lg:bg-transparent ${activeLink(
                 item.url
               )}`}
+              style={{ whiteSpace: 'nowrap' }}
             >
               {t(item.key)}
             </Link>
           </li>
         ))}
+        <li className="lg:hidden flex justify-center pt-2">
+          <AppLanguageSwitcher />
+        </li>
       </ul>
 
-      <div className="hidden lg:block ml-4">
+      <div className="hidden lg:block mr-4 rtl:ml-4 rtl:mr-0">
         <AppLanguageSwitcher />
       </div>
 

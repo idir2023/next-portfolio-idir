@@ -5,14 +5,14 @@ import Image from "next/image";
 import { useLanguage } from "../../context/LanguageContext";
 
 const AppHero = () => {
-  const { t } = useLanguage();
+  const { t, isRTL } = useLanguage();
 
   return (
     <header className="bg-hero-pattern bg-no-repeat bg-center px-3">
       <AppContainer>
         <div className="h-screen flex flex-col justify-center pt-16 items-center text-center lg:items-start lg:text-left">
           <div className="flex flex-col lg:flex-row items-center lg:items-start">
-            <div className="relative w-32 h-32 lg:w-48 lg:h-48 mb-4 lg:mb-0 lg:mr-6 rounded-full overflow-hidden shadow-lg">
+            <div className={`relative w-32 h-32 lg:w-48 lg:h-48 mb-4 lg:mb-0 rounded-full overflow-hidden shadow-lg ${isRTL ? 'lg:ml-6' : 'lg:mr-6'}`}>
               <Image
                 src={DATA.image}
                 alt={DATA.name}
@@ -22,10 +22,10 @@ const AppHero = () => {
               />
             </div>
 
-            <div>
-              <span className="text-xs md:text-sm text-black flex items-center">
+            <div className={isRTL ? 'lg:text-right' : 'lg:text-left'}>
+              <span className="text-xs md:text-sm text-black flex items-center justify-center lg:justify-start">
                 <span>{t('home.hiIm')}</span>
-                <span className="block w-6 lg:w-11 h-1 bg-primary ml-2 rounded-lg" />
+                <span className={`block w-6 lg:w-11 h-1 bg-primary rounded-lg ${isRTL ? 'mr-2' : 'ml-2'}`} />
               </span>
               <h1 className="text-5xl lg:text-8xl font-bold text-black">
                 {DATA.name}
@@ -33,7 +33,7 @@ const AppHero = () => {
               <h2 className="text-xl lg:text-4xl font-bold text-primary mt-2">
                 [{DATA.status}]
               </h2>
-              <p className="text-xs lg:text-base text-gray max-w-md tracking-widest mt-2 lg:mt-3 md:ml-1">
+              <p className="text-xs lg:text-base text-gray max-w-md mt-2 lg:mt-3">
                 {DATA.description}
               </p>
               <AppButton
