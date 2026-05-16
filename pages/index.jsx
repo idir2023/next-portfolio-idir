@@ -13,6 +13,29 @@ const services = [
   { id: 5, key: 'services.performance', desc: 'services.performanceDesc', icon: '/images/service-performance.svg' },
 ];
 
+// Map skill names to translation keys
+const skillKeyMap = {
+  'HTML 5': 'skills.html',
+  'CSS 3': 'skills.css',
+  'Javascript': 'skills.javascript',
+  'TailwindCss': 'skills.tailwind',
+  'Laravel': 'skills.laravel',
+  'Bootstrap 5': 'skills.bootstrap',
+  'React JS': 'skills.react',
+  'Next JS': 'skills.next',
+  'Firebase': 'skills.firebase',
+  'Git': 'skills.git',
+  'Github': 'skills.github',
+  'Sql': 'skills.sql',
+  'Vite JS': 'skills.vite',
+  'Java': 'skills.java',
+  'Visual Studio Code': 'skills.vscode',
+  'Linux': 'skills.linux',
+  'C++': 'skills.cpp',
+  'Node JS': 'skills.nodejs',
+  'MongoDB': 'skills.mongodb',
+};
+
 const Home = () => {
   const { t } = useLanguage();
 
@@ -45,22 +68,26 @@ const Home = () => {
         {/* Skills Section */}
         <AppSection title={t('home.skillsTechnology')}>
           <div className="flex flex-wrap gap-3 justify-center">
-            {USER.skills.map((item, index) => (
-              <div
-                key={item.id}
-                className="skill-badge px-4 py-2 rounded-full flex items-center gap-2 animate-scale-in"
-                style={{ animationDelay: `${index * 0.05}s` }}
-              >
-                <Image
-                  src={item.icon}
-                  alt={item.name}
-                  width={20}
-                  height={20}
-                  className="w-5 h-5"
-                />
-                <span className="text-sm font-medium text-light">{item.name}</span>
-              </div>
-            ))}
+            {USER.skills.map((item, index) => {
+              const translateKey = skillKeyMap[item.name];
+              const translatedName = translateKey ? t(translateKey) : item.name;
+              return (
+                <div
+                  key={item.id}
+                  className="skill-badge px-4 py-2 rounded-full flex items-center gap-2 animate-scale-in"
+                  style={{ animationDelay: `${index * 0.05}s` }}
+                >
+                  <Image
+                    src={item.icon}
+                    alt={item.name}
+                    width={20}
+                    height={20}
+                    className="w-5 h-5"
+                  />
+                  <span className="text-sm font-medium text-light">{translatedName}</span>
+                </div>
+              );
+            })}
           </div>
         </AppSection>
 
