@@ -7,12 +7,12 @@ import USER from '../data/user.json';
 const Project = () => (
     <AppShell
       title={`Idir Lahcen | ${USER.project.title}`}
-      description={USER.project.desctiption}
+      description={USER.project.description}
       keyword="project, projects, portfolio project, web development project, skill"
     >
       <AppHeader
         title={USER.project.title}
-        description={USER.project.desctiption}
+        description={USER.project.description}
       />
       <AppSection title="Personal Projects">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6">

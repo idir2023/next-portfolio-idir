@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Remove-Item -Force \"public\\\\images\\\\AWS.png\", \"public\\\\images\\\\Syed Logo.png\", \"public\\\\images\\\\bootstrap.jpg\", \"public\\\\images\\\\docker.png\", \"public\\\\images\\\\python.png\", \"public\\\\images\\\\react.svg\", \"public\\\\images\\\\portfolio-details-1.png\", \"public\\\\images\\\\portfolio-details-2.png\", \"public\\\\images\\\\portfolio-details-3.png\", \"public\\\\images\\\\service-pwa.svg\", \"public\\\\images\\\\service-uiux.svg\", \"public\\\\images\\\\skill-bootstrap.svg\", \"public\\\\images\\\\skill-pwa.svg\", \"public\\\\images\\\\skill-webpack.svg\", \"public\\\\images\\\\work-6.png\", \"public\\\\images\\\\work-71.png\")"
+    ]
+  }
+}
