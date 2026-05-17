@@ -273,6 +273,15 @@
         "stack": "React, Laravel, Tailwind CSS",
         "category": "Professional Project",
         "url": "https://divindeep.com/"
+      },
+      {
+        "id": 14,
+        "top": true,
+        "image": "/images/ecommerce_app.png",
+        "name": "Ecommerce App",
+        "stack": "React, Laravel, Tailwind CSS",
+        "category": "Professional Project",
+        "url": "https://github.com/idir2023/ecommerce-app"
       }
     ]
   },
