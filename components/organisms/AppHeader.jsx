@@ -14,7 +14,7 @@ const AppHeader = ({ title, description }) => {
   const { first, rest } = getTitleColor();
 
   return (
-    <div className="text-center py-16">
+    <div className="text-center pt-40 lg:pt-48 pb-16">
       <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
         <span className="gradient-text">{first}</span>
         <span className="text-light">{rest}</span>

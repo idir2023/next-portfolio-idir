@@ -16,14 +16,16 @@ const AppNav = () => {
   const [isActiveNav, setIsActiveNav] = useState(false);
   const [isActiveToggler, setIsActiveToggler] = useState(false);
   const { pathname } = useRouter();
-  const { t } = useLanguage();
+  const { t, isRTL } = useLanguage();
 
   const handleWindowScroll = () => {
-    const pageScrollPosition = window.pageYOffset;
-    if (pageScrollPosition >= 50) {
-      setIsActiveNav(true);
-    } else {
-      setIsActiveNav(false);
+    if (typeof window !== 'undefined') {
+      const pageScrollPosition = window.pageYOffset;
+      if (pageScrollPosition >= 50) {
+        setIsActiveNav(true);
+      } else {
+        setIsActiveNav(false);
+      }
     }
   };
 
@@ -38,18 +40,23 @@ const AppNav = () => {
     return () => window.removeEventListener('scroll', handleWindowScroll);
   }, []);
 
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsActiveToggler(false);
+  }, [pathname]);
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isActiveNav
-          ? 'bg-dark/90 backdrop-blur-lg border-b border-white/10'
+          ? 'bg-[#0F172A]/95 backdrop-blur-lg border-b border-white/10'
           : 'bg-transparent'
       }`}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className={`flex items-center justify-between h-16 lg:h-20 ${isRTL ? 'flex-row-reverse' : ''}`}>
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/" className={`flex items-center gap-2 group ${isRTL ? 'flex-row-reverse' : ''}`}>
             <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
               <span className="text-white font-bold text-lg">I</span>
             </div>
@@ -59,7 +66,7 @@ const AppNav = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className={`hidden lg:flex items-center ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`} style={{ gap: '2rem' }}>
             {navItems.map((item) => (
               <Link
                 key={item.url}
@@ -72,13 +79,14 @@ const AppNav = () => {
           </div>
 
           {/* Right side */}
-          <div className="flex items-center gap-4">
+          <div className={`flex items-center gap-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
             <AppLanguageSwitcher />
 
             {/* Mobile menu button */}
             <button
               onClick={handleToggler}
               className="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
+              aria-label="Menu"
             >
               <span className={`w-6 h-0.5 bg-light transition-all ${isActiveToggler ? 'rotate-45 translate-y-2' : ''}`} />
               <span className={`w-6 h-0.5 bg-light transition-all ${isActiveToggler ? 'opacity-0' : ''}`} />
@@ -93,7 +101,7 @@ const AppNav = () => {
             isActiveToggler ? 'max-h-96 pb-4' : 'max-h-0'
           }`}
         >
-          <div className="flex flex-col gap-2 pt-4">
+          <div className={`flex flex-col gap-2 pt-4 ${isRTL ? 'text-right' : 'text-left'}`}>
             {navItems.map((item) => (
               <Link
                 key={item.url}
@@ -102,7 +110,7 @@ const AppNav = () => {
                 className={`px-4 py-3 rounded-lg transition-all ${
                   pathname === item.url
                     ? 'bg-primary/20 text-primary'
-                    : 'text-light/70 hover:bg-surface hover:text-light'
+                    : 'text-light/70 hover:bg-[#1E293B] hover:text-light'
                 }`}
               >
                 {t(item.key)}

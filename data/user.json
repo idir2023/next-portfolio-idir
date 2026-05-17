@@ -264,6 +264,15 @@
         "stack": "Next js, Supabase, Tailwind CSS ,Api",
         "category": "Professional Project",
         "url": "https://github.com/idir2023/invoices_management_2026"
+      },
+      {
+        "id": 13,
+        "top": true,
+        "image": "/images/divindeep.png",
+        "name": "DivinDeep",
+        "stack": "React, Laravel, Tailwind CSS",
+        "category": "Professional Project",
+        "url": "https://divindeep.com/"
       }
     ]
   },

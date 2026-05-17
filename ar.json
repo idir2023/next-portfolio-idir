@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "projects": "المشاريع",
+    "experiences": "الخبرات",
+    "about": "عني",
+    "contact": "اتصال"
+  },
+  "home": {
+    "whatCanIDo": "ماذا أفعل",
+    "skillsTechnology": "المهارات",
+    "projectsCompleted": "مشاريعي",
+    "showAllProjects": "عرض الكل",
+    "hiIm": "أهلاً، أنا",
+    "resume": "السيرة",
+    "status": "مهندس برمجيات",
+    "description": "أنا شغوف بمجال تطوير الواجهات الأمامية للويب. أستمتع بتحويل التصاميم إلى واجهات مستخدم وظيفية باستخدام أحدث الأدوات والأطر البرمجية."
+  },
+  "projects": {
+    "title": "المشاريع",
+    "description": "بعض مشاريعي المكتملة.",
+    "personal": "مشاريع شخصية",
+    "professional": "مشاريع مهنية"
+  },
+  "about": {
+    "title": "عني",
+    "description": "اعرف المزيد عني.",
+    "myHistory": "قصتي",
+    "myHistoryDesc": "اسمي لحسن إيدير. عمري 23 سنة من المغرب. مطور ويب متخصص في PHP Laravel. حالياً أعمل كمتدرب في شركة Mandi Tech Info في المغرب منذ 8 أشهر.",
+    "whatAmIDoing": "ما أفعله",
+    "whatAmIDoingDesc": "أركز حالياً على تعلم أطر العمل الأمامية مثل React و Next.js، إلى جانب صقل مهاراتي في تطوير الواجهة الخلفية.",
+    "whatNext": "أهدافي",
+    "whatNextDesc": "هدفي هو إتقان تقنيات الواجهة الأمامية والخلفية لبناء حلول للمشاكل بسهولة.",
+    "dreamsAndWishes": "أحلامي",
+    "dreamsAndWishesDesc": "أسعى للانضمام إلى شركات مرموقة مثل Google أو Microsoft في مجال تطوير البرمجيات."
+  },
+  "experiences": {
+    "title": "الخبرات",
+    "description": "مساري المهني.",
+    "workExperience": "الخبرات",
+    "education": "التعليم"
+  },
+  "contact": {
+    "title": "اتصال",
+    "description": "لا تتردد في التواصل معي.",
+    "connectWithMe": "تواصل معي"
+  },
+  "common": {
+    "getInTouch": "تواصل معي",
+    "ctaText": "لديك سؤال؟ تواصل معي.",
+    "sayHola": "مرحباً",
+    "viewWork": "عرض أعمالي",
+    "viewProject": "عرض المشروع",
+    "designBy": "صممه",
+    "techStack": "ReactJS + NextJS + Tailwindcss",
+    "copyright": "©",
+    "warmGreetings": "لحسن إيدير"
+  },
+  "services": {
+    "websiteDev": "المواقع",
+    "websiteDevDesc": "تطوير المواقع الإلكترونية.",
+    "webAppDev": "التطبيقات",
+    "webAppDevDesc": "تطوير تطبيقات الويب.",
+    "responsiveDesign": "متجاوب",
+    "responsiveDesignDesc": "تصميم متجاوب لكل الأجهزة.",
+    "performance": "الأداء",
+    "performanceDesc": "تحسين الأداء."
+  },
+  "skills": {
+    "html": "HTML 5",
+    "css": "CSS 3",
+    "javascript": "JavaScript",
+    "tailwind": "Tailwind CSS",
+    "laravel": "Laravel",
+    "bootstrap": "Bootstrap 5",
+    "react": "React JS",
+    "next": "Next JS",
+    "firebase": "Firebase",
+    "git": "Git",
+    "github": "GitHub",
+    "sql": "SQL",
+    "vite": "Vite JS",
+    "java": "Java",
+    "vscode": "Visual Studio Code",
+    "linux": "Linux",
+    "cpp": "C++",
+    "nodejs": "Node JS",
+    "mongodb": "MongoDB"
+  }
+}

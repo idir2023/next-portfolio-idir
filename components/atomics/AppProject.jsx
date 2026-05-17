@@ -1,6 +1,10 @@
 import Image from 'next/image';
+import { useLanguage } from '../../context/LanguageContext';
 
-const AppProject = ({ project }) => (
+const AppProject = ({ project }) => {
+  const { t } = useLanguage();
+
+  return (
   <div className="p-4">
     <div className="relative h-48 rounded-xl overflow-hidden mb-4 group">
       <Image
@@ -19,7 +23,7 @@ const AppProject = ({ project }) => (
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white text-sm font-medium"
         >
           <i className="fas fa-external-link-alt" />
-          View Project
+          {t('common.viewProject')}
         </a>
       </div>
     </div>
@@ -38,6 +42,7 @@ const AppProject = ({ project }) => (
       </span>
     </div>
   </div>
-);
+  );
+};
 
 export default AppProject;
