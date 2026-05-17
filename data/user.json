@@ -256,7 +256,7 @@
         "category": "Professional Project",
         "url": "https://www.afrilavage.com/"
       },
-       {
+      {
         "id": 12,
         "top": true,
         "image": "/images/invoicesPro.png",
@@ -268,7 +268,7 @@
       {
         "id": 13,
         "top": true,
-        "image": "/images/divindeep.png",
+        "image": "/images/divinDeep0.png",
         "name": "DivinDeep",
         "stack": "React, Laravel, Tailwind CSS",
         "category": "Professional Project",
