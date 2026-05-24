@@ -282,6 +282,15 @@
         "stack": "React, Laravel, Tailwind CSS",
         "category": "Professional Project",
         "url": "https://github.com/idir2023/ecommerce-app"
+      },
+      {
+        "id": 15,
+        "top": true,
+        "image": "/images/clinic.png",
+        "name": "Clinic-saas",
+        "stack": "Laravel, JQuery, Tailwind CSS, Bootstrap",
+        "category": "Personal Project",
+        "url": "https://github.com/idir2023/clinic-saas"
       }
     ]
   },
