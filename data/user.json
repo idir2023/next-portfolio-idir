@@ -291,7 +291,17 @@
         "stack": "Laravel, JQuery, Tailwind CSS, Bootstrap",
         "category": "Personal Project",
         "url": "https://github.com/idir2023/clinic-saas"
+      },
+       {
+        "id": 16,
+        "top": true,
+        "image": "/images/erp.png",
+        "name": "ERP System",
+        "stack": "Laravel, JQuery, Tailwind CSS, Bootstrap",
+        "category": "Personal Project",
+        "url": "https://github.com/idir2023/erp-2026"
       }
+
     ]
   },
   "contact": {

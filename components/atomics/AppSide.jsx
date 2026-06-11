@@ -1,9 +1,9 @@
 import USER from '../../data/user.json';
 
 const AppSide = () => (
-  <div className="hidden md:flex justify-between fixed bottom-0 left-0 right-0 z-10 w-full px-3 md:px-10 2xl:px-20 max-w-[1905px] mx-auto">
-    <aside className="flex flex-col items-center">
-      <ul className="flex flex-col items-center w-6 space-y-4">
+  <div className="hidden md:flex justify-between fixed bottom-0 left-0 right-0 z-10 w-full px-8 2xl:px-16 max-w-[1905px] mx-auto pointer-events-none">
+    <aside className="flex flex-col items-center pointer-events-auto">
+      <ul className="flex flex-col items-center space-y-5">
         {USER.contact.contents
           .filter((filteredItem) => filteredItem.category === 'Social Media')
           .map((item) => (
@@ -14,30 +14,30 @@ const AppSide = () => (
                 rel="noopener noreferrer"
                 title={item.name}
                 aria-label={item.name}
+                className="group flex items-center justify-center w-10 h-10 rounded-xl bg-surface/30 border border-white/5 text-muted hover:text-primary hover:border-primary/30 hover:bg-primary/5 transition-all duration-300"
               >
-                <i
-                  className={`${item.icon} text-2xl transition duration-300 text-gray hover:text-primary transform hover:-translate-y-1`}
-                />
+                <i className={`${item.icon} text-lg transition-transform duration-300 group-hover:-translate-y-0.5`} />
               </a>
             </li>
           ))}
       </ul>
-      <div className="h-28 w-[2px] bg-primary mt-5" />
+      <div className="h-24 w-[1px] bg-gradient-to-b from-primary to-transparent mt-5" />
     </aside>
-    <aside className="flex flex-col justify-end items-center">
+    <aside className="flex flex-col justify-end items-center pointer-events-auto">
       {[USER.contact.contents.find((item) => item.category === 'Email')].map(
-        (item) => (
-          <a
-            key={item.id}
-            href={`mailto:${item.username}`}
-            className="text-gray transition duration-300 hover:text-primary tracking-widest"
-            style={{ writingMode: 'tb-rl' }}
-          >
-            {item.username}
-          </a>
-        )
+        (item) =>
+          item && (
+            <a
+              key={item.id}
+              href={`mailto:${item.username}`}
+              className="text-muted text-xs transition duration-300 hover:text-primary tracking-widest hover:-translate-y-1"
+              style={{ writingMode: 'tb-rl', letterSpacing: '0.15em' }}
+            >
+              {item.username}
+            </a>
+          )
       )}
-      <div className="h-28 w-[2px] bg-primary mt-5" />
+      <div className="h-24 w-[1px] bg-gradient-to-b from-transparent to-primary mt-5" />
     </aside>
   </div>
 );

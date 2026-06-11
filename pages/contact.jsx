@@ -11,7 +11,7 @@ const getIconColor = (platform) => {
     case 'WhatsApp':
       return 'from-green-400 to-green-600';
     case 'GitHub':
-      return 'from-gray-700 to-gray-900';
+      return 'from-gray-600 to-gray-800';
     case 'Gmail':
       return 'from-red-400 to-red-600';
     case 'Location':
@@ -36,23 +36,28 @@ const Contact = () => {
       <AppHeader
         title={t('contact.title')}
         description={t('contact.description')}
+        badge={t('contact.badge')}
       />
-      <AppSection title={t('contact.connectWithMe')}>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <AppSection title={t('contact.connectWithMe')} subtitle={t('contact.subtitle')}>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           {USER.contact.contents.map((item, index) => (
             <a
               key={item.id}
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="contact-card p-6 rounded-2xl text-center animate-slide-up"
+              className="contact-card p-7 rounded-2xl text-center animate-slide-up group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${getIconColor(item.name)} flex items-center justify-center mb-4 mx-auto`}>
-                <i className={`${item.icon} text-xl text-white`} />
+              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${getIconColor(item.name)} flex items-center justify-center mb-5 mx-auto shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                <i className={`${item.icon} text-2xl text-white`} />
               </div>
-              <h3 className="text-sm font-semibold text-light mb-1">{item.name}</h3>
-              <p className="text-xs text-muted truncate">{item.username}</p>
+              <h3 className="text-base font-semibold text-light mb-1.5">{item.name}</h3>
+              <p className="text-sm text-muted truncate">{item.username}</p>
+              <span className="inline-flex items-center gap-1 mt-4 text-xs text-primary/70 opacity-0 group-hover:opacity-100 transition-opacity">
+                {t('contact.getInTouch')}
+                <i className="fas fa-arrow-right text-[10px]" />
+              </span>
             </a>
           ))}
         </div>

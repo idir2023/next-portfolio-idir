@@ -4,97 +4,130 @@ import AppContainer from "../atomics/AppContainer";
 import AppButton from "../atomics/AppButton";
 import Image from "next/image";
 import { useLanguage } from "../../context/LanguageContext";
+import { useEffect, useRef, useState } from "react";
+
+const statsData = [
+  { value: 15, suffix: '+', key: 'hero.statsProjects' },
+  { value: 4, suffix: '+', key: 'hero.statsExperience' },
+  { value: 20, suffix: '+', key: 'hero.statsClients' },
+  { value: 6, suffix: '+', key: 'hero.statsTechnologies' },
+];
+
+const AnimatedCounter = ({ value, suffix }) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+          let start = 0;
+          const duration = 2000;
+          const step = Math.ceil(value / (duration / 16));
+          const timer = setInterval(() => {
+            start += step;
+            if (start >= value) {
+              setCount(value);
+              clearInterval(timer);
+            } else {
+              setCount(start);
+            }
+          }, 16);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [value]);
+
+  return (
+    <span ref={ref} className="text-3xl lg:text-4xl font-bold text-light tabular-nums">
+      {count}{suffix}
+    </span>
+  );
+};
 
 const AppHero = () => {
   const { t, isRTL } = useLanguage();
 
   return (
     <header className="relative min-h-screen flex items-center overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent pointer-events-none" />
+
       <AppContainer>
-        <div className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center pt-20 ${isRTL ? 'lg:grid-cols-reverse' : ''}`}>
-          {/* Text Content */}
-          <div className={`text-center lg:text-left animate-slide-up ${isRTL ? 'lg:text-right' : 'lg:text-left'} hero-content`}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/30 mb-6">
+        <div className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center pt-28 lg:pt-32 ${isRTL ? 'lg:grid-cols-reverse' : ''}`}>
+          <div className={`text-center lg:text-left animate-fade-in-lg ${isRTL ? 'lg:text-right' : 'lg:text-left'}`}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 shadow-lg shadow-primary/5">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              <span className="text-sm text-light">{t('home.hiIm')}</span>
+              <span className="text-sm text-light/80 font-medium">{t('hero.available')}</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4">
-              <span className="text-light">{DATA.name.split(' ')[0]}</span>
-              <br />
-              <span className="gradient-text">{DATA.name.split(' ')[1]}</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 leading-tight">
+              <span className="text-light/90">{t('hero.need')} </span>
+              <br className="hidden sm:block" />
+              <span className="shimmer-text">{t('hero.solution')}</span>
+              <span className="text-light/90">?</span>
             </h1>
 
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-[#94A3B8] mb-6">
-              [{t('home.status')}]
+            <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold text-muted mb-6">
+              {t('hero.tagline')}
             </h2>
 
-            <p className="text-[#94A3B8] text-base lg:text-lg max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed">
-              {t('home.description')}
+            <p className="text-muted text-base lg:text-lg max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+              {t('hero.description')}
             </p>
 
             <div className={`flex flex-wrap gap-4 justify-center items-center ${isRTL ? 'lg:justify-end' : 'lg:justify-start'}`}>
               <AppButton
-                title={t('home.resume')}
-                href="/images/cv.pdf"
-                download="cv.pdf"
+                title={t('hero.getQuote')}
+                href="/contact"
+                variant="gold"
+                icon="fas fa-bolt"
+                className="!mt-0 shadow-lg shadow-accent/20 hover:shadow-accent/40"
+              />
+              <AppButton
+                title={t('hero.viewWork')}
+                href="/projects"
+                variant="outline"
                 className="!mt-0"
               />
-              <Link
-                href="/projects"
-                className="group inline-flex items-center gap-2 px-6 py-3 rounded-full border border-primary/40 text-light font-medium hover:border-primary hover:bg-primary/10 hover:text-primary transition-all duration-300"
-              >
-                <i className="fas fa-folder-open text-primary text-sm group-hover:scale-110 transition-transform duration-300" />
-                {t('home.projectsCompleted')}
-                <i className="fas fa-arrow-right text-xs opacity-60 group-hover:translate-x-1 transition-transform duration-300" />
-              </Link>
             </div>
 
-            {/* Social Links */}
-            <div className={`flex items-center gap-4 mt-12 justify-center ${isRTL ? 'lg:justify-end' : 'lg:justify-start'}`}>
-              <a
-                href="https://github.com/idir2023"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-[#1E293B] flex items-center justify-center text-light hover:bg-primary/20 hover:text-primary transition-all duration-300"
-              >
-                <i className="fab fa-github" />
+            <div className={`flex items-center gap-5 mt-10 justify-center ${isRTL ? 'lg:justify-end' : 'lg:justify-start'}`}>
+              <a href="https://github.com/idir2023" target="_blank" rel="noopener noreferrer"
+                className="w-11 h-11 rounded-xl bg-surface/60 border border-white/10 flex items-center justify-center text-light/60 hover:text-primary hover:border-primary/40 hover:bg-primary/10 transition-all duration-300 hover:-translate-y-1">
+                <i className="fab fa-github text-lg" />
               </a>
-              <a
-                href="https://www.linkedin.com/in/lahcen-idir-99270b309/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-[#1E293B] flex items-center justify-center text-light hover:bg-primary/20 hover:text-primary transition-all duration-300"
-              >
-                <i className="fab fa-linkedin-in" />
+              <a href="https://www.linkedin.com/in/lahcen-idir-99270b309/" target="_blank" rel="noopener noreferrer"
+                className="w-11 h-11 rounded-xl bg-surface/60 border border-white/10 flex items-center justify-center text-light/60 hover:text-primary hover:border-primary/40 hover:bg-primary/10 transition-all duration-300 hover:-translate-y-1">
+                <i className="fab fa-linkedin-in text-lg" />
               </a>
-              <a
-                href="https://wa.me/+212681736149"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-[#1E293B] flex items-center justify-center text-light hover:bg-primary/20 hover:text-primary transition-all duration-300"
-              >
-                <i className="fab fa-whatsapp" />
+              <a href="https://wa.me/+212681736149" target="_blank" rel="noopener noreferrer"
+                className="w-11 h-11 rounded-xl bg-surface/60 border border-white/10 flex items-center justify-center text-light/60 hover:text-primary hover:border-primary/40 hover:bg-primary/10 transition-all duration-300 hover:-translate-y-1">
+                <i className="fab fa-whatsapp text-lg" />
               </a>
-              <a
-                href="https://www.instagram.com/idir_lh/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-[#1E293B] flex items-center justify-center text-light hover:bg-primary/20 hover:text-primary transition-all duration-300"
-              >
-                <i className="fab fa-instagram" />
+              <a href="https://www.instagram.com/idir_lh/" target="_blank" rel="noopener noreferrer"
+                className="w-11 h-11 rounded-xl bg-surface/60 border border-white/10 flex items-center justify-center text-light/60 hover:text-primary hover:border-primary/40 hover:bg-primary/10 transition-all duration-300 hover:-translate-y-1">
+                <i className="fab fa-instagram text-lg" />
               </a>
+              <div className="hidden sm:flex items-center gap-2 pl-4 border-l border-white/10">
+                <span className="text-xs text-muted">{t('hero.follow')}</span>
+              </div>
             </div>
           </div>
 
-          {/* Image */}
-          <div className="relative flex justify-center animate-fade-in">
+          <div className="relative flex justify-center animate-fade-in-lg" style={{ animationDelay: '0.2s' }}>
             <div className="relative">
-              {/* Decorative rings */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary via-secondary to-accent blur-2xl opacity-30 animate-pulse" style={{ animationDuration: '4s' }} />
-              <div className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-secondary p-1">
-                  <div className="w-full h-full rounded-full bg-[#0F172A] overflow-hidden">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary via-secondary to-accent blur-3xl opacity-20 animate-pulse-slow" />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 blur-2xl animate-pulse-slow" style={{ animationDuration: '6s' }} />
+
+              <div className="relative w-60 h-60 sm:w-72 sm:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-secondary p-[3px] shadow-2xl shadow-primary/30">
+                  <div className="w-full h-full rounded-full bg-dark overflow-hidden">
                     <Image
                       src={DATA.image}
                       alt={DATA.name}
@@ -106,21 +139,34 @@ const AppHero = () => {
                 </div>
               </div>
 
-              {/* Floating badges */}
-              <div className={`absolute -top-4 ${isRTL ? 'left-4 right-auto' : 'right-4'} px-4 py-2 rounded-full glass animate-float`}>
-                <span className="text-sm font-medium text-light">Next.js</span>
+              <div className="absolute -top-3 -right-3 px-4 py-2 rounded-2xl glass-premium animate-float shadow-xl">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                  <span className="text-sm font-semibold text-light">{t('hero.availableFor')}</span>
+                </div>
               </div>
-              <div className={`absolute -bottom-4 ${isRTL ? 'right-4 left-auto' : 'left-4'} px-4 py-2 rounded-full glass animate-float`} style={{ animationDelay: '-2s' }}>
-                <span className="text-sm font-medium text-light">React</span>
+              <div className="absolute -bottom-3 -left-3 px-4 py-2 rounded-2xl glass-premium animate-float shadow-xl" style={{ animationDelay: '-2.5s' }}>
+                <div className="flex items-center gap-2">
+                  <i className="fas fa-star text-accent text-sm" />
+                  <span className="text-sm font-semibold text-light">{t('hero.topRated')}</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center pt-2">
-            <div className="w-1 h-3 rounded-full bg-primary animate-pulse" />
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 lg:mt-20 py-8 border-t border-white/[0.04]">
+          {statsData.map((stat, index) => (
+            <div key={index} className="text-center animate-fade-in" style={{ animationDelay: `${0.3 + index * 0.1}s` }}>
+              <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+              <p className="text-muted text-sm mt-1 font-medium">{t(stat.key)}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce hidden md:block">
+          <div className="w-5 h-8 rounded-full border-2 border-white/20 flex justify-center pt-1.5">
+            <div className="w-1 h-2 rounded-full bg-gradient-to-b from-primary to-secondary animate-pulse" />
           </div>
         </div>
       </AppContainer>

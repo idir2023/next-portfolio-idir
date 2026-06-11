@@ -21,11 +21,7 @@ const AppNav = () => {
   const handleWindowScroll = () => {
     if (typeof window !== 'undefined') {
       const pageScrollPosition = window.pageYOffset;
-      if (pageScrollPosition >= 50) {
-        setIsActiveNav(true);
-      } else {
-        setIsActiveNav(false);
-      }
+      setIsActiveNav(pageScrollPosition >= 50);
     }
   };
 
@@ -40,33 +36,33 @@ const AppNav = () => {
     return () => window.removeEventListener('scroll', handleWindowScroll);
   }, []);
 
-  // Close mobile menu when route changes
   useEffect(() => {
     setIsActiveToggler(false);
   }, [pathname]);
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isActiveNav
-          ? 'bg-[#0F172A]/95 backdrop-blur-lg border-b border-white/10'
+          ? 'bg-dark/90 backdrop-blur-xl border-b border-white/[0.05] shadow-lg shadow-primary/5'
           : 'bg-transparent'
       }`}
     >
       <div className="container-custom">
         <div className={`flex items-center justify-between h-16 lg:h-20 ${isRTL ? 'flex-row-reverse' : ''}`}>
-          {/* Logo */}
-          <Link href="/" className={`flex items-center gap-2 group ${isRTL ? 'flex-row-reverse' : ''}`}>
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+          <Link href="/" className={`flex items-center gap-2.5 group ${isRTL ? 'flex-row-reverse' : ''}`}>
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-all duration-300">
               <span className="text-white font-bold text-lg">I</span>
             </div>
-            <span className="text-xl font-bold text-light group-hover:text-primary transition-colors">
-              Idir
-            </span>
+            <div>
+              <span className="text-xl font-bold text-light group-hover:text-primary transition-colors">
+                Idir
+              </span>
+              <span className="hidden sm:inline text-xs text-muted ml-1 font-light">Lahcen</span>
+            </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className={`hidden lg:flex items-center ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`} style={{ gap: '2rem' }}>
+          <div className={`hidden lg:flex items-center ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`} style={{ gap: '0.5rem' }}>
             {navItems.map((item) => (
               <Link
                 key={item.url}
@@ -78,44 +74,57 @@ const AppNav = () => {
             ))}
           </div>
 
-          {/* Right side */}
-          <div className={`flex items-center gap-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
+          <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+            <Link
+              href="/contact"
+              className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-full btn-gradient text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/40"
+            >
+              <i className="fas fa-rocket text-xs" />
+              {t('common.hireMe')}
+            </Link>
+
             <AppLanguageSwitcher />
 
-            {/* Mobile menu button */}
             <button
               onClick={handleToggler}
-              className="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
+              className="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg hover:bg-white/5 transition-all"
               aria-label="Menu"
             >
-              <span className={`w-6 h-0.5 bg-light transition-all ${isActiveToggler ? 'rotate-45 translate-y-2' : ''}`} />
-              <span className={`w-6 h-0.5 bg-light transition-all ${isActiveToggler ? 'opacity-0' : ''}`} />
-              <span className={`w-6 h-0.5 bg-light transition-all ${isActiveToggler ? '-rotate-45 -translate-y-2' : ''}`} />
+              <span className={`w-6 h-[2px] bg-light rounded-full transition-all ${isActiveToggler ? 'rotate-45 translate-y-[4px]' : ''}`} />
+              <span className={`w-6 h-[2px] bg-light rounded-full transition-all ${isActiveToggler ? 'opacity-0' : ''}`} />
+              <span className={`w-6 h-[2px] bg-light rounded-full transition-all ${isActiveToggler ? '-rotate-45 -translate-y-[4px]' : ''}`} />
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         <div
-          className={`lg:hidden overflow-hidden transition-all duration-300 ${
-            isActiveToggler ? 'max-h-96 pb-4' : 'max-h-0'
+          className={`lg:hidden overflow-hidden transition-all duration-400 ${
+            isActiveToggler ? 'max-h-96 pb-6' : 'max-h-0'
           }`}
         >
-          <div className={`flex flex-col gap-2 pt-4 ${isRTL ? 'text-right' : 'text-left'}`}>
+          <div className={`flex flex-col gap-1 pt-2 ${isRTL ? 'text-right' : 'text-left'}`}>
             {navItems.map((item) => (
               <Link
                 key={item.url}
                 href={item.url}
                 onClick={() => setIsActiveToggler(false)}
-                className={`px-4 py-3 rounded-lg transition-all ${
+                className={`px-4 py-3 rounded-xl transition-all ${
                   pathname === item.url
-                    ? 'bg-primary/20 text-primary'
-                    : 'text-light/70 hover:bg-[#1E293B] hover:text-light'
+                    ? 'bg-primary/15 text-primary font-medium'
+                    : 'text-light/70 hover:bg-white/5 hover:text-light'
                 }`}
               >
                 {t(item.key)}
               </Link>
             ))}
+            <Link
+              href="/contact"
+              onClick={() => setIsActiveToggler(false)}
+              className="mt-2 px-4 py-3 rounded-xl btn-gradient text-white text-center font-semibold"
+            >
+              <i className="fas fa-rocket text-xs ml-2" />
+              {t('common.hireMe')}
+            </Link>
           </div>
         </div>
       </div>
