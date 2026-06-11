@@ -30,6 +30,57 @@
       "url": "/contact"
     }
   ],
+  "developer_experience": {
+    "total_years": 4,
+    "total_projects": 15,
+    "expertise": [
+      {
+        "category": "Frontend",
+        "icon": "fab fa-react",
+        "color": "from-sky-400 to-blue-600",
+        "skills": [
+          { "name": "React JS", "level": 85, "years": 2 },
+          { "name": "Next JS", "level": 80, "years": 2 },
+          { "name": "JavaScript", "level": 88, "years": 3 },
+          { "name": "Tailwind CSS", "level": 90, "years": 3 },
+          { "name": "Bootstrap", "level": 85, "years": 3 },
+          { "name": "HTML/CSS", "level": 95, "years": 4 }
+        ]
+      },
+      {
+        "category": "Backend",
+        "icon": "fas fa-server",
+        "color": "from-emerald-400 to-green-600",
+        "skills": [
+          { "name": "Laravel", "level": 85, "years": 3 },
+          { "name": "PHP", "level": 82, "years": 3 },
+          { "name": "Node JS", "level": 65, "years": 1 },
+          { "name": "SQL", "level": 78, "years": 3 }
+        ]
+      },
+      {
+        "category": "Tools & Workflow",
+        "icon": "fas fa-tools",
+        "color": "from-violet-400 to-purple-600",
+        "skills": [
+          { "name": "Git & GitHub", "level": 88, "years": 3 },
+          { "name": "VS Code", "level": 92, "years": 4 },
+          { "name": "Vite JS", "level": 75, "years": 2 },
+          { "name": "Firebase", "level": 70, "years": 2 },
+          { "name": "Linux", "level": 72, "years": 2 },
+          { "name": "MongoDB", "level": 60, "years": 1 }
+        ]
+      }
+    ],
+    "workflow": [
+      { "step": 1, "title": "Discovery", "description": "Understanding requirements, goals, and target audience" },
+      { "step": 2, "title": "Planning", "description": "Architecture design, tech stack selection, and timeline" },
+      { "step": 3, "title": "Design", "description": "UI/UX design with responsive, modern principles" },
+      { "step": 4, "title": "Development", "description": "Clean, maintainable code with best practices" },
+      { "step": 5, "title": "Testing", "description": "Cross-browser testing, performance optimization" },
+      { "step": 6, "title": "Deployment", "description": "Launch, monitoring, and ongoing support" }
+    ]
+  },
   "services": [
     {
       "id": 2,
@@ -162,6 +213,7 @@
         "top": false,
         "image": "/images/work-2.png",
         "name": "Hospital Management",
+        "description": "A comprehensive hospital management system with patient records, appointments, billing and staff management modules.",
         "stack": "HTML, CSS, PHP, JavaScript",
         "category": "Personal Project",
         "url": "https://github.com/idir2023/Gestion_Hospitalier"
@@ -171,6 +223,7 @@
         "top": false,
         "image": "/images/invoice.png",
         "name": "Invoices Management",
+        "description": "An invoice management platform with CRUD operations, PDF generation and payment tracking.",
         "stack": "JQuery, CSS, Laravel",
         "category": "Personal Project",
         "url": "https://github.com/idir2023/Invoices_Management.git"
@@ -180,6 +233,7 @@
         "top": false,
         "image": "/images/work-7.png",
         "name": "WhatsApp Portfolio",
+        "description": "A unique WhatsApp-style portfolio interface showcasing skills and projects in a conversational format.",
         "stack": "Javascript JS, CSS",
         "category": "Personal Project",
         "url": "https://github.com/idir2023/Portfolio_whatssap"
@@ -188,7 +242,8 @@
         "id": 4,
         "top": true,
         "image": "/images/task_app.png",
-        "name": "Task Website",
+        "name": "Task Management",
+        "description": "A full-featured task management app with Kanban board, priority levels, user roles, and real-time updates.",
         "stack": "JQuery, CSS, Laravel",
         "category": "Personal Project",
         "url": "https://github.com/idir2023/TASK-MANAGEMENT"
@@ -198,6 +253,7 @@
         "top": true,
         "image": "/images/portfolio_react.png",
         "name": "My Portfolio",
+        "description": "A modern, responsive portfolio website built with Next.js showcasing projects, skills and experience.",
         "stack": "Next js",
         "category": "Personal Project",
         "url": "https://syedmoin-lab.github.io/My-Portfolio-3/"
@@ -207,6 +263,7 @@
         "top": true,
         "image": "/images/airline.png",
         "name": "Airline Reservation",
+        "description": "An airline ticket booking system with flight search, seat selection, and payment integration.",
         "stack": "React.js, Vite.js, CSS, API Key",
         "category": "Personal Project",
         "url": "https://github.com/idir2023/airline-reservation"
@@ -216,6 +273,7 @@
         "top": true,
         "image": "/images/work-1.png",
         "name": "Online Recruitment",
+        "description": "A recruitment portal connecting employers with job seekers with CV management and application tracking.",
         "stack": "HTML, CSS, PHP, JavaScript",
         "category": "Personal Project",
         "url": "https://restaurant-website-grilli.vercel.app/"
@@ -225,6 +283,7 @@
         "top": true,
         "image": "/images/chat_app.png",
         "name": "Chat App",
+        "description": "A real-time chat application with private messaging, group chats, and media sharing capabilities.",
         "stack": "React JS, Vite JS, CSS, Html",
         "category": "Personal Project",
         "url": "https://github.com/idir2023/Chat_real_use_react.js"
@@ -234,6 +293,7 @@
         "top": true,
         "image": "/images/syndichat.png",
         "name": "Syndicat Systeme",
+        "description": "A syndicate management system for tracking member contributions, loans, and financial reporting.",
         "stack": "Laravel ,JQuery , Tailwind CSS",
         "category": "Personal Project",
         "url": "https://github.com/idir2023/Syndicat-amine"
@@ -243,6 +303,7 @@
         "top": true,
         "image": "/images/avocat.PNG",
         "name": "Avocat Systeme",
+        "description": "A law firm management platform with case tracking, client management, document generation and billing.",
         "stack": "Laravel ,JQuery , Bootstrap",
         "category": "Professional Project",
         "url": "https://cabinethbavocats.com/"
@@ -252,6 +313,7 @@
         "top": true,
         "image": "/images/afrilavage.png",
         "name": "Afrilavage Systeme",
+        "description": "A laundry service management system with order tracking, delivery management and customer portal.",
         "stack": "Laravel, JQuery, Tailwind CSS",
         "category": "Professional Project",
         "url": "https://www.afrilavage.com/"
@@ -260,7 +322,8 @@
         "id": 12,
         "top": true,
         "image": "/images/invoicesPro.png",
-        "name": "AI Invoice Payment SaaS Platform",
+        "name": "AI Invoice Payment SaaS",
+        "description": "A SaaS platform with AI-powered invoice processing, automated payment collection and financial analytics.",
         "stack": "Next js, Supabase, Tailwind CSS ,Api",
         "category": "Professional Project",
         "url": "https://github.com/idir2023/invoices_management_2026"
@@ -270,6 +333,7 @@
         "top": true,
         "image": "/images/divinDeep0.png",
         "name": "DivinDeep",
+        "description": "A deep learning platform with model training, dataset management, and AI-powered analytics dashboard.",
         "stack": "React, Laravel, Tailwind CSS",
         "category": "Professional Project",
         "url": "https://divindeep.com/"
@@ -279,6 +343,7 @@
         "top": true,
         "image": "/images/ecommerce_app.png",
         "name": "Ecommerce App",
+        "description": "A full-featured e-commerce platform with product management, cart, checkout, and payment processing.",
         "stack": "React, Laravel, Tailwind CSS",
         "category": "Professional Project",
         "url": "https://github.com/idir2023/ecommerce-app"
@@ -288,6 +353,7 @@
         "top": true,
         "image": "/images/clinic.png",
         "name": "Clinic-saas",
+        "description": "A SaaS clinic management system with appointment scheduling, patient records, billing and analytics.",
         "stack": "Laravel, JQuery, Tailwind CSS, Bootstrap",
         "category": "Personal Project",
         "url": "https://github.com/idir2023/clinic-saas"
@@ -297,6 +363,7 @@
         "top": true,
         "image": "/images/erp.png",
         "name": "ERP System",
+        "description": "An enterprise resource planning system with inventory, HR, finance, and supply chain management modules.",
         "stack": "Laravel, JQuery, Tailwind CSS, Bootstrap",
         "category": "Personal Project",
         "url": "https://github.com/idir2023/erp-2026"

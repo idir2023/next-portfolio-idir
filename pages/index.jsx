@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState, useEffect, useRef } from 'react';
 import USER from '../data/user.json';
 import AppSection from '../components/molecules/AppSection';
 import AppProject from '../components/atomics/AppProject';
@@ -42,8 +43,63 @@ const skillKeyMap = {
   'MongoDB': 'skills.mongodb',
 };
 
+const SkillBar = ({ name, level, years, delay }) => {
+  const [width, setWidth] = useState(0);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setWidth(level), 300);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [level]);
+
+  return (
+    <div ref={ref} className="animate-fade-in" style={{ animationDelay: `${delay}s` }}>
+      <div className="flex justify-between items-center mb-1.5">
+        <span className="text-sm font-medium text-light/90">{name}</span>
+        <span className="text-xs text-muted">{level}%</span>
+      </div>
+      <div className="h-2 bg-surface/60 rounded-full overflow-hidden border border-white/5">
+        <div
+          className="h-full rounded-full bg-gradient-to-r from-primary via-secondary to-accent transition-all duration-1000 ease-out"
+          style={{ width: `${width}%` }}
+        />
+      </div>
+      <span className="text-[10px] text-muted/60 mt-0.5 block">{years}+ {years === 1 ? 'year' : 'years'} exp.</span>
+    </div>
+  );
+};
+
+const WorkflowStep = ({ step, title, description, index }) => (
+  <div className="relative group animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
+    <div className="flex items-start gap-4">
+      <div className="flex flex-col items-center">
+        <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform">
+          {step}
+        </div>
+        {index < USER.developer_experience.workflow.length - 1 && (
+          <div className="w-0.5 h-full min-h-[3rem] bg-gradient-to-b from-primary/40 to-transparent mt-2" />
+        )}
+      </div>
+      <div className="flex-1 pb-8">
+        <h4 className="text-base font-semibold text-light group-hover:text-primary transition-colors">{title}</h4>
+        <p className="text-sm text-muted mt-1 leading-relaxed">{description}</p>
+      </div>
+    </div>
+  </div>
+);
+
 const Home = () => {
   const { t } = useLanguage();
+  const [activeCategory, setActiveCategory] = useState(0);
+  const devExp = USER.developer_experience;
 
   return (
     <div>
@@ -88,6 +144,58 @@ const Home = () => {
               {t('home.getStarted')}
               <i className="fas fa-arrow-right text-xs" />
             </Link>
+          </div>
+        </AppSection>
+
+        <AppSection
+          id="experience"
+          title={t('home.developerExperience')}
+          subtitle={t('home.experienceSubtitle')}
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+            <div className="lg:col-span-3">
+              <div className="flex flex-wrap gap-2 mb-8">
+                {devExp.expertise.map((cat, index) => (
+                  <button
+                    key={cat.category}
+                    onClick={() => setActiveCategory(index)}
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                      activeCategory === index
+                        ? 'btn-gradient text-white shadow-lg shadow-primary/20'
+                        : 'bg-surface/30 border border-white/10 text-muted hover:text-light'
+                    }`}
+                  >
+                    <i className={`${cat.icon} mr-1.5 text-xs`} />
+                    {t(`experience.${cat.category.replace(/[ &]/g, '')}`)}
+                  </button>
+                ))}
+              </div>
+              <div className="space-y-4">
+                {devExp.expertise[activeCategory].skills.map((skill, i) => (
+                  <SkillBar
+                    key={skill.name}
+                    name={skill.name}
+                    level={skill.level}
+                    years={skill.years}
+                    delay={i * 0.1}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <div className="lg:col-span-2">
+              <div className="glass-premium rounded-2xl p-6 h-full">
+                <h4 className="text-base font-semibold text-light mb-5 flex items-center gap-2">
+                  <i className="fas fa-cogs text-primary text-sm" />
+                  {t('home.myWorkflow')}
+                </h4>
+                <div className="space-y-0">
+                  {devExp.workflow.map((step, i) => (
+                    <WorkflowStep key={step.step} {...step} index={i} />
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </AppSection>
 

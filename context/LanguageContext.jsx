@@ -30,6 +30,9 @@ const translations = {
     home: {
       whatCanIDo: 'What I Do',
       servicesSubtitle: 'Professional web development services tailored to your business needs.',
+      developerExperience: 'Developer Experience',
+      experienceSubtitle: 'My expertise and proficiency across different technologies and tools.',
+      myWorkflow: 'My Workflow',
       skillsTechnology: 'Skills & Technologies',
       skillsSubtitle: 'Tools and technologies I work with on a daily basis.',
       projectsCompleted: 'Featured Projects',
@@ -41,6 +44,11 @@ const translations = {
       status: 'Software Engineer',
       description: 'I am passionate and interested in the ever-growing field of Web Front-End development. I enjoy transforming designs into functional user interfaces using the latest tools and frameworks.',
     },
+    experience: {
+      Frontend: 'Frontend',
+      Backend: 'Backend',
+      ToolsWorkflow: 'Tools & Workflow',
+    },
     projects: {
       title: 'Projects',
       description: 'A showcase of my work and projects.',
@@ -48,6 +56,11 @@ const translations = {
       all: 'All',
       personal: 'Personal',
       professional: 'Professional',
+      search: 'Search projects...',
+      noResults: 'No projects found',
+      clearFilters: 'Clear Filters',
+      showing: 'Showing',
+      projects: 'projects',
     },
     about: {
       title: 'About',
@@ -207,6 +220,9 @@ const translations = {
     home: {
       whatCanIDo: 'Ce que je fais',
       servicesSubtitle: 'Services professionnels de développement web adaptés à vos besoins.',
+      developerExperience: 'Expérience Développeur',
+      experienceSubtitle: 'Mon expertise et ma maîtrise des différentes technologies et outils.',
+      myWorkflow: 'Mon Processus',
       skillsTechnology: 'Compétences',
       skillsSubtitle: 'Outils et technologies que j\'utilise au quotidien.',
       projectsCompleted: 'Projets Récents',
@@ -218,6 +234,11 @@ const translations = {
       status: 'Ingénieur Logiciel',
       description: 'Je suis passionné par le développement web Front-End. J\'aime transformer des designs en interfaces fonctionnelles avec les derniers outils et frameworks.',
     },
+    experience: {
+      Frontend: 'Frontend',
+      Backend: 'Backend',
+      ToolsWorkflow: 'Outils & Flux',
+    },
     projects: {
       title: 'Projets',
       description: 'Une vitrine de mon travail et de mes projets.',
@@ -225,6 +246,11 @@ const translations = {
       all: 'Tous',
       personal: 'Personnel',
       professional: 'Professionnel',
+      search: 'Rechercher des projets...',
+      noResults: 'Aucun projet trouvé',
+      clearFilters: 'Effacer les filtres',
+      showing: 'Affichage de',
+      projects: 'projets',
     },
     about: {
       title: 'À propos',
@@ -384,6 +410,9 @@ const translations = {
     home: {
       whatCanIDo: 'ماذا أفعل',
       servicesSubtitle: 'خدمات تطوير ويب احترافية مصممة خصيصاً لاحتياجات عملك.',
+      developerExperience: 'خبراتي التقنية',
+      experienceSubtitle: 'خبراتي وكفاءتي في مختلف التقنيات والأدوات.',
+      myWorkflow: 'سير العمل',
       skillsTechnology: 'المهارات والتقنيات',
       skillsSubtitle: 'الأدوات والتقنيات التي أعمل بها يومياً.',
       projectsCompleted: 'مشاريعي المميزة',
@@ -395,6 +424,11 @@ const translations = {
       status: 'مهندس برمجيات',
       description: 'أنا شغوف بمجال تطوير الواجهات الأمامية للويب. أستمتع بتحويل التصاميم إلى واجهات مستخدم وظيفية باستخدام أحدث الأدوات والأطر البرمجية.',
     },
+    experience: {
+      Frontend: 'الواجهة الأمامية',
+      Backend: 'الواجهة الخلفية',
+      ToolsWorkflow: 'الأدوات وسير العمل',
+    },
     projects: {
       title: 'المشاريع',
       description: 'عرض لأعمالي ومشاريعي.',
@@ -402,6 +436,11 @@ const translations = {
       all: 'الكل',
       personal: 'شخصي',
       professional: 'مهنيم',
+      search: 'ابحث عن مشاريع...',
+      noResults: 'لم يتم العثور على مشاريع',
+      clearFilters: 'مسح الفلتر',
+      showing: 'عرض',
+      projects: 'مشاريع',
     },
     about: {
       title: 'عني',
