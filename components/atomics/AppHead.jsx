@@ -48,7 +48,7 @@ const AppHead = ({ title = 'Idir Lahcen', description = 'Full-stack web develope
           description: 'Full-stack web developer from Morocco specializing in React, Next.js, and Laravel.',
           sameAs: [
             'https://github.com/idir2023',
-            'https://www.linkedin.com/in/lahcen-idir-99270b309/',
+            'https://www.linkedin.com/in/lahcen-i-99270b309/',
             'https://wa.me/+212681736149'
           ],
           knowsAbout: ['Web Development', 'React', 'Next.js', 'Laravel', 'PHP', 'JavaScript'],

@@ -124,7 +124,7 @@ const AppHero = () => {
                 className="w-11 h-11 rounded-xl bg-surface/60 border border-white/10 flex items-center justify-center text-light/60 hover:text-primary hover:border-primary/40 hover:bg-primary/10 transition-all duration-300 hover:-translate-y-1">
                 <i className="fab fa-github text-lg" />
               </a>
-              <a href="https://www.linkedin.com/in/lahcen-idir-99270b309/" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/in/lahcen-i-99270b309/" target="_blank" rel="noopener noreferrer"
                 className="w-11 h-11 rounded-xl bg-surface/60 border border-white/10 flex items-center justify-center text-light/60 hover:text-primary hover:border-primary/40 hover:bg-primary/10 transition-all duration-300 hover:-translate-y-1">
                 <i className="fab fa-linkedin-in text-lg" />
               </a>

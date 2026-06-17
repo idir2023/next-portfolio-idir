@@ -12,6 +12,7 @@ import AppFooter from '../atomics/AppFooter';
 import AnimatedBackground from '../atomics/AnimatedBackground';
 import { useLanguage } from '../../context/LanguageContext';
 import { useEffect, useState } from 'react';
+import ScrollProgress from '../atomics/ScrollProgress';
 
 const AppShell = ({ title = 'Idir Lahcen', keyword = '', description = 'I am a software engineer specializing in web development.', hero = false, cta = true, children }) => {
   const { t } = useLanguage();
@@ -28,8 +29,27 @@ const AppShell = ({ title = 'Idir Lahcen', keyword = '', description = 'I am a s
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScroll]);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll('.reveal');
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
+      <ScrollProgress />
       <AppHead title={title} description={description} keyword={keyword} />
       <AnimatedBackground />
       <AppNav />

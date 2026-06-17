@@ -43,6 +43,63 @@ const skillKeyMap = {
   'MongoDB': 'skills.mongodb',
 };
 
+const CircularProgress = ({ level, size = 70, strokeWidth = 5, color }) => {
+  const [offset, setOffset] = useState(0);
+  const ref = useRef(null);
+  const radius = (size - strokeWidth) / 2;
+  const circumference = 2 * Math.PI * radius;
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          const targetOffset = circumference - (level / 100) * circumference;
+          setTimeout(() => setOffset(targetOffset), 200);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [level, circumference]);
+
+  return (
+    <div ref={ref} className="circular-progress group">
+      <svg width={size} height={size} className="transform -rotate-90">
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          fill="none"
+          stroke="rgba(255,255,255,0.05)"
+          strokeWidth={strokeWidth}
+        />
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          fill="none"
+          stroke={`url(#grad-${level})`}
+          strokeWidth={strokeWidth}
+          strokeLinecap="round"
+          strokeDasharray={circumference}
+          strokeDashoffset={offset}
+          className="progress-ring"
+        />
+        <defs>
+          <linearGradient id={`grad-${level}`} x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#6366F1" />
+            <stop offset="100%" stopColor={color || '#8B5CF6'} />
+          </linearGradient>
+        </defs>
+      </svg>
+      <div className="absolute inset-0 flex items-center justify-center">
+        <span className="text-sm font-bold text-light group-hover:text-primary transition-colors">{level}%</span>
+      </div>
+    </div>
+  );
+};
+
 const SkillBar = ({ name, level, years, delay, color }) => {
   const [width, setWidth] = useState(0);
   const ref = useRef(null);
@@ -62,43 +119,45 @@ const SkillBar = ({ name, level, years, delay, color }) => {
 
   return (
     <div ref={ref} className="animate-fade-in group" style={{ animationDelay: `${delay}s` }}>
-      <div className="flex justify-between items-center mb-1.5">
-        <span className="text-sm font-medium text-light/90 group-hover:text-primary transition-colors">{name}</span>
-        <div className="flex items-center gap-2">
-          <span className="text-[10px] text-muted/50">{years}y</span>
-          <span className="text-xs font-semibold text-light/80">{level}%</span>
+      <div className="flex items-center gap-3 mb-2">
+        <CircularProgress level={level} size={44} strokeWidth={4} color={color} />
+        <div className="flex-1 min-w-0">
+          <div className="flex justify-between items-center mb-0.5">
+            <span className="text-sm font-medium text-light/90 group-hover:text-primary transition-colors truncate">{name}</span>
+            <span className="text-[10px] text-muted/50 ml-2 whitespace-nowrap">{years}y exp</span>
+          </div>
+          <div className="h-1.5 bg-surface/60 rounded-full overflow-hidden">
+            <div
+              className={`h-full rounded-full transition-all duration-1000 ease-out ${color || 'bg-gradient-to-r from-primary via-secondary to-accent'}`}
+              style={{ width: `${width}%` }}
+            />
+          </div>
         </div>
-      </div>
-      <div className="h-2.5 bg-surface/60 rounded-full overflow-hidden border border-white/5 p-[1px]">
-        <div
-          className={`h-full rounded-full transition-all duration-1000 ease-out ${color || 'bg-gradient-to-r from-primary via-secondary to-accent'}`}
-          style={{ width: `${width}%` }}
-        />
       </div>
     </div>
   );
 };
 
 const WorkflowStep = ({ step, title, description, index, total }) => (
-  <div className="relative group animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
+  <div className="relative group" style={{ animationDelay: `${index * 0.1}s` }}>
     <div className="flex items-start gap-4">
       <div className="flex flex-col items-center">
-        <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg transition-all duration-300 ${
+        <div className={`w-9 h-9 rounded-xl flex items-center justify-center text-white font-bold text-xs shadow-lg transition-all duration-500 ${
           index === 0
-            ? 'bg-gradient-to-br from-primary to-secondary shadow-primary/20'
+            ? 'bg-gradient-to-br from-primary to-secondary shadow-primary/30'
             : index === total - 1
-            ? 'bg-gradient-to-br from-accent to-pink-500 shadow-accent/20'
-            : 'bg-surface border border-white/10 group-hover:border-primary/30'
+            ? 'bg-gradient-to-br from-accent to-pink-500 shadow-accent/30'
+            : 'bg-surface border border-white/10 group-hover:border-primary/40 group-hover:shadow-primary/20 group-hover:shadow-lg'
         }`}>
           {step}
         </div>
         {index < total - 1 && (
-          <div className="w-px h-full min-h-[2.5rem] bg-gradient-to-b from-primary/30 to-transparent" />
+          <div className="w-px h-full min-h-[2rem] bg-gradient-to-b from-primary/20 to-transparent mt-1.5" />
         )}
       </div>
-      <div className="flex-1 pb-6">
+      <div className="flex-1 pb-5">
         <h4 className="text-sm font-semibold text-light group-hover:text-primary transition-colors">{title}</h4>
-        <p className="text-xs text-muted/70 mt-0.5 leading-relaxed">{description}</p>
+        <p className="text-xs text-muted/60 mt-0.5 leading-relaxed">{description}</p>
       </div>
     </div>
   </div>
@@ -117,7 +176,7 @@ const Home = () => {
           title={t('home.whatCanIDo')}
           subtitle={t('home.servicesSubtitle')}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
             {services.map((item, index) => (
               <div
                 key={item.id}
@@ -160,7 +219,7 @@ const Home = () => {
           title={t('home.developerExperience')}
           subtitle={t('home.experienceSubtitle')}
         >
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 reveal">
             <div className="lg:col-span-3">
               <div className="flex flex-wrap gap-2 mb-8">
                 {devExp.expertise.map((cat, index) => (
@@ -221,7 +280,7 @@ const Home = () => {
           title={t('home.testimonials')}
           subtitle={t('home.testimonialsSubtitle')}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 reveal">
             {USER.testimonials.map((item, index) => (
               <div
                 key={item.id}
@@ -256,7 +315,7 @@ const Home = () => {
           title={t('home.skillsTechnology')}
           subtitle={t('home.skillsSubtitle')}
         >
-          <div className="flex flex-wrap gap-3 justify-center">
+          <div className="flex flex-wrap gap-3 justify-center reveal">
             {USER.skills.map((item, index) => {
               const translateKey = skillKeyMap[item.name];
               const translatedName = translateKey ? t(translateKey) : item.name;
@@ -285,7 +344,7 @@ const Home = () => {
           title={t('home.projectsCompleted')}
           subtitle={t('home.projectsSubtitle')}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
             {USER.project.contents
               .filter((item) => item.top)
               .slice(0, 6)

@@ -1,3 +1,38 @@
+const Particles = () => {
+  const particles = Array.from({ length: 20 }, (_, i) => ({
+    id: i,
+    left: `${Math.random() * 100}%`,
+    size: Math.random() * 4 + 1,
+    delay: `${Math.random() * 15}s`,
+    duration: `${15 + Math.random() * 15}s`,
+    opacity: Math.random() * 0.3 + 0.1,
+  }));
+
+  return (
+    <>
+      {particles.map((p) => (
+        <div
+          key={p.id}
+          className="particle"
+          style={{
+            left: p.left,
+            width: p.size,
+            height: p.size,
+            opacity: p.opacity,
+            animationDelay: p.delay,
+            animationDuration: p.duration,
+            background: p.id % 3 === 0
+              ? '#6366F1'
+              : p.id % 3 === 1
+              ? '#8B5CF6'
+              : '#F59E0B',
+          }}
+        />
+      ))}
+    </>
+  );
+};
+
 const AnimatedBackground = () => {
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
@@ -27,6 +62,8 @@ const AnimatedBackground = () => {
           background: 'radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.05) 0%, transparent 50%)'
         }}
       />
+
+      <Particles />
 
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[700px] bg-gradient-radial from-primary/10 to-transparent rounded-full blur-3xl" />
       <div className="absolute bottom-0 -right-48 w-[800px] h-[500px] bg-gradient-radial from-secondary/10 to-transparent rounded-full blur-3xl" />

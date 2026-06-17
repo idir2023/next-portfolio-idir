@@ -26,7 +26,7 @@ const AppFooter = () => {
                 className="w-8 h-8 rounded-lg bg-surface/50 border border-white/5 flex items-center justify-center text-muted hover:text-primary hover:border-primary/30 transition-all">
                 <i className="fab fa-github text-sm" />
               </a>
-              <a href="https://www.linkedin.com/in/lahcen-idir-99270b309/" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/in/lahcen-i-99270b309/" target="_blank" rel="noopener noreferrer"
                 className="w-8 h-8 rounded-lg bg-surface/50 border border-white/5 flex items-center justify-center text-muted hover:text-primary hover:border-primary/30 transition-all">
                 <i className="fab fa-linkedin-in text-sm" />
               </a>
