@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const AppDecoration = ({ type }) => {
+const AppDecoration = ({ type = 'fixline' }) => {
   switch (type) {
     case 'fixline':
       return (
@@ -23,10 +23,6 @@ const AppDecoration = ({ type }) => {
 
 AppDecoration.propTypes = {
   type: PropTypes.oneOf(['fixline', 'threeline']),
-};
-
-AppDecoration.defaultProps = {
-  type: 'fixline',
 };
 
 export default AppDecoration;

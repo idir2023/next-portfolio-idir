@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const AppSection = ({ title, subtitle, children, noSeparator, id, className }) => {
+const AppSection = ({ title = '', subtitle = '', children, noSeparator = false, id = '', className = '' }) => {
   const getTitleGradient = () => {
     const words = title.split(' ');
     if (words.length > 1) {
@@ -39,14 +39,6 @@ AppSection.propTypes = {
   noSeparator: PropTypes.bool,
   id: PropTypes.string,
   className: PropTypes.string,
-};
-
-AppSection.defaultProps = {
-  title: '',
-  subtitle: '',
-  noSeparator: false,
-  id: '',
-  className: '',
 };
 
 export default AppSection;

@@ -13,7 +13,7 @@ import AnimatedBackground from '../atomics/AnimatedBackground';
 import { useLanguage } from '../../context/LanguageContext';
 import { useEffect, useState } from 'react';
 
-const AppShell = ({ title, keyword, description, hero, cta, children }) => {
+const AppShell = ({ title = 'Idir Lahcen', keyword = '', description = 'I am a software engineer specializing in web development.', hero = false, cta = true, children }) => {
   const { t } = useLanguage();
   const [showMobileBar, setShowMobileBar] = useState(false);
   const [lastScroll, setLastScroll] = useState(0);
@@ -76,14 +76,6 @@ AppShell.propTypes = {
   description: PropTypes.string,
   hero: PropTypes.bool,
   cta: PropTypes.bool,
-};
-
-AppShell.defaultProps = {
-  title: 'Idir Lahcen',
-  description: 'I am a software engineer specializing in web development.',
-  keyword: '',
-  hero: false,
-  cta: true,
 };
 
 export default AppShell;

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const AppToggle = ({ active, onClick }) => (
+const AppToggle = ({ active = false, onClick = null }) => (
   <a
     href="#menu"
     aria-label="menu"
@@ -29,11 +29,6 @@ const AppToggle = ({ active, onClick }) => (
 AppToggle.propTypes = {
   active: PropTypes.bool,
   onClick: PropTypes.func,
-};
-
-AppToggle.defaultProps = {
-  active: false,
-  onClick: null,
 };
 
 export default AppToggle;

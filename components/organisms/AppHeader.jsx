@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useLanguage } from '../../context/LanguageContext';
 
-const AppHeader = ({ title, description, badge }) => {
+const AppHeader = ({ title = 'AppHeader Title', description = 'AppHeader description', badge = '' }) => {
   const { isRTL } = useLanguage();
 
   const getTitleColor = () => {
@@ -37,12 +37,6 @@ AppHeader.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   badge: PropTypes.string,
-};
-
-AppHeader.defaultProps = {
-  title: 'AppHeader Title',
-  description: 'AppHeader description',
-  badge: '',
 };
 
 export default AppHeader;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const SITE_URL = 'https://idir-lahcen.vercel.app';
 
-const AppHead = ({ title, description, keyword, image, path }) => {
+const AppHead = ({ title = 'Idir Lahcen', description = 'Full-stack web developer from Morocco. I build modern web applications with React, Next.js, and Laravel.', keyword = '', image = '/images/logo.jpg', path = '' }) => {
   const fullTitle = title.includes('|') ? title : `${title} | Idir Lahcen - Full-Stack Web Developer`;
   const url = `${SITE_URL}${path || ''}`;
 
@@ -67,14 +67,6 @@ AppHead.propTypes = {
   keyword: PropTypes.string,
   image: PropTypes.string,
   path: PropTypes.string,
-};
-
-AppHead.defaultProps = {
-  title: 'Idir Lahcen',
-  description: 'Full-stack web developer from Morocco. I build modern web applications with React, Next.js, and Laravel.',
-  keyword: '',
-  image: '/images/logo.jpg',
-  path: '',
 };
 
 export default AppHead;
