@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 import AppLanguageSwitcher from '../atomics/AppLanguageSwitcher';
 
@@ -18,27 +18,37 @@ const AppNav = () => {
   const { pathname } = useRouter();
   const { t, isRTL } = useLanguage();
 
-  const handleWindowScroll = () => {
+  const handleWindowScroll = useCallback(() => {
     if (typeof window !== 'undefined') {
-      const pageScrollPosition = window.pageYOffset;
-      setIsActiveNav(pageScrollPosition >= 50);
+      setIsActiveNav(window.pageYOffset >= 50);
     }
-  };
+  }, []);
 
-  const handleToggler = (event) => {
-    event.preventDefault();
+  const handleToggler = useCallback(() => {
     setIsActiveToggler((prev) => !prev);
-    event.stopPropagation();
-  };
+  }, []);
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleWindowScroll);
-    return () => window.removeEventListener('scroll', handleWindowScroll);
+  const closeMenu = useCallback(() => {
+    setIsActiveToggler(false);
   }, []);
 
   useEffect(() => {
-    setIsActiveToggler(false);
-  }, [pathname]);
+    window.addEventListener('scroll', handleWindowScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleWindowScroll);
+  }, [handleWindowScroll]);
+
+  useEffect(() => {
+    closeMenu();
+  }, [pathname, closeMenu]);
+
+  useEffect(() => {
+    if (isActiveToggler) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isActiveToggler]);
 
   return (
     <nav
@@ -87,44 +97,56 @@ const AppNav = () => {
 
             <button
               onClick={handleToggler}
-              className="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg hover:bg-white/5 transition-all"
-              aria-label="Menu"
+              className={`lg:hidden relative z-50 w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg hover:bg-white/5 transition-all ${
+                isActiveToggler ? 'bg-white/5' : ''
+              }`}
+              aria-label={isActiveToggler ? 'Close menu' : 'Open menu'}
             >
-              <span className={`w-6 h-[2px] bg-light rounded-full transition-all ${isActiveToggler ? 'rotate-45 translate-y-[4px]' : ''}`} />
-              <span className={`w-6 h-[2px] bg-light rounded-full transition-all ${isActiveToggler ? 'opacity-0' : ''}`} />
-              <span className={`w-6 h-[2px] bg-light rounded-full transition-all ${isActiveToggler ? '-rotate-45 -translate-y-[4px]' : ''}`} />
+              <span className={`w-6 h-[2px] bg-light rounded-full transition-all duration-300 ${isActiveToggler ? 'rotate-45 translate-y-[4px]' : ''}`} />
+              <span className={`w-6 h-[2px] bg-light rounded-full transition-all duration-300 ${isActiveToggler ? 'opacity-0 scale-0' : ''}`} />
+              <span className={`w-6 h-[2px] bg-light rounded-full transition-all duration-300 ${isActiveToggler ? '-rotate-45 -translate-y-[4px]' : ''}`} />
             </button>
           </div>
         </div>
+      </div>
 
-        <div
-          className={`lg:hidden overflow-hidden transition-all duration-400 ${
-            isActiveToggler ? 'max-h-96 pb-6' : 'max-h-0'
-          }`}
-        >
-          <div className={`flex flex-col gap-1 pt-2 ${isRTL ? 'text-right' : 'text-left'}`}>
-            {navItems.map((item) => (
+      <div className={`fixed inset-0 z-40 transition-all duration-300 lg:hidden ${
+        isActiveToggler ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+      }`}>
+        <div className="absolute inset-0 bg-dark/60 backdrop-blur-sm" onClick={closeMenu} />
+        <div className={`absolute top-20 left-0 right-0 mx-4 transition-all duration-300 ${
+          isActiveToggler ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'
+        }`}>
+          <div className="glass-premium rounded-2xl p-4 shadow-2xl">
+            <div className={`flex flex-col gap-1 ${isRTL ? 'text-right' : 'text-left'}`}>
+              {navItems.map((item, i) => (
+                <Link
+                  key={item.url}
+                  href={item.url}
+                  onClick={closeMenu}
+                  className={`px-4 py-3.5 rounded-xl transition-all duration-300 flex items-center gap-3 ${
+                    pathname === item.url
+                      ? 'bg-primary/15 text-primary font-semibold'
+                      : 'text-light/70 hover:bg-white/5 hover:text-light'
+                  }`}
+                  style={{ animationDelay: `${i * 0.05}s` }}
+                >
+                  {pathname === item.url && (
+                    <span className="w-1 h-4 rounded-full bg-primary" />
+                  )}
+                  <span>{t(item.key)}</span>
+                </Link>
+              ))}
+              <div className="separator-gradient my-2" />
               <Link
-                key={item.url}
-                href={item.url}
-                onClick={() => setIsActiveToggler(false)}
-                className={`px-4 py-3 rounded-xl transition-all ${
-                  pathname === item.url
-                    ? 'bg-primary/15 text-primary font-medium'
-                    : 'text-light/70 hover:bg-white/5 hover:text-light'
-                }`}
+                href="/contact"
+                onClick={closeMenu}
+                className="mt-1 px-4 py-3.5 rounded-xl btn-gradient text-white text-center font-semibold flex items-center justify-center gap-2"
               >
-                {t(item.key)}
+                <i className="fas fa-bolt text-xs" />
+                {t('common.hireMe')}
               </Link>
-            ))}
-            <Link
-              href="/contact"
-              onClick={() => setIsActiveToggler(false)}
-              className="mt-2 px-4 py-3 rounded-xl btn-gradient text-white text-center font-semibold"
-            >
-              <i className="fas fa-rocket text-xs ml-2" />
-              {t('common.hireMe')}
-            </Link>
+            </div>
           </div>
         </div>
       </div>

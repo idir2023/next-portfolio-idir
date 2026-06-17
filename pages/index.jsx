@@ -43,7 +43,7 @@ const skillKeyMap = {
   'MongoDB': 'skills.mongodb',
 };
 
-const SkillBar = ({ name, level, years, delay }) => {
+const SkillBar = ({ name, level, years, delay, color }) => {
   const [width, setWidth] = useState(0);
   const ref = useRef(null);
 
@@ -61,36 +61,44 @@ const SkillBar = ({ name, level, years, delay }) => {
   }, [level]);
 
   return (
-    <div ref={ref} className="animate-fade-in" style={{ animationDelay: `${delay}s` }}>
+    <div ref={ref} className="animate-fade-in group" style={{ animationDelay: `${delay}s` }}>
       <div className="flex justify-between items-center mb-1.5">
-        <span className="text-sm font-medium text-light/90">{name}</span>
-        <span className="text-xs text-muted">{level}%</span>
+        <span className="text-sm font-medium text-light/90 group-hover:text-primary transition-colors">{name}</span>
+        <div className="flex items-center gap-2">
+          <span className="text-[10px] text-muted/50">{years}y</span>
+          <span className="text-xs font-semibold text-light/80">{level}%</span>
+        </div>
       </div>
-      <div className="h-2 bg-surface/60 rounded-full overflow-hidden border border-white/5">
+      <div className="h-2.5 bg-surface/60 rounded-full overflow-hidden border border-white/5 p-[1px]">
         <div
-          className="h-full rounded-full bg-gradient-to-r from-primary via-secondary to-accent transition-all duration-1000 ease-out"
+          className={`h-full rounded-full transition-all duration-1000 ease-out ${color || 'bg-gradient-to-r from-primary via-secondary to-accent'}`}
           style={{ width: `${width}%` }}
         />
       </div>
-      <span className="text-[10px] text-muted/60 mt-0.5 block">{years}+ {years === 1 ? 'year' : 'years'} exp.</span>
     </div>
   );
 };
 
-const WorkflowStep = ({ step, title, description, index }) => (
+const WorkflowStep = ({ step, title, description, index, total }) => (
   <div className="relative group animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
     <div className="flex items-start gap-4">
       <div className="flex flex-col items-center">
-        <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform">
+        <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg transition-all duration-300 ${
+          index === 0
+            ? 'bg-gradient-to-br from-primary to-secondary shadow-primary/20'
+            : index === total - 1
+            ? 'bg-gradient-to-br from-accent to-pink-500 shadow-accent/20'
+            : 'bg-surface border border-white/10 group-hover:border-primary/30'
+        }`}>
           {step}
         </div>
-        {index < USER.developer_experience.workflow.length - 1 && (
-          <div className="w-0.5 h-full min-h-[3rem] bg-gradient-to-b from-primary/40 to-transparent mt-2" />
+        {index < total - 1 && (
+          <div className="w-px h-full min-h-[2.5rem] bg-gradient-to-b from-primary/30 to-transparent" />
         )}
       </div>
-      <div className="flex-1 pb-8">
-        <h4 className="text-base font-semibold text-light group-hover:text-primary transition-colors">{title}</h4>
-        <p className="text-sm text-muted mt-1 leading-relaxed">{description}</p>
+      <div className="flex-1 pb-6">
+        <h4 className="text-sm font-semibold text-light group-hover:text-primary transition-colors">{title}</h4>
+        <p className="text-xs text-muted/70 mt-0.5 leading-relaxed">{description}</p>
       </div>
     </div>
   </div>
@@ -159,39 +167,48 @@ const Home = () => {
                   <button
                     key={cat.category}
                     onClick={() => setActiveCategory(index)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                       activeCategory === index
-                        ? 'btn-gradient text-white shadow-lg shadow-primary/20'
-                        : 'bg-surface/30 border border-white/10 text-muted hover:text-light'
+                        ? `bg-gradient-to-r ${cat.color} text-white shadow-lg`
+                        : 'bg-surface/30 border border-white/10 text-muted hover:text-light hover:border-primary/30'
                     }`}
                   >
-                    <i className={`${cat.icon} mr-1.5 text-xs`} />
+                    <i className={`${cat.icon} text-xs`} />
                     {t(`experience.${cat.category.replace(/[ &]/g, '')}`)}
                   </button>
                 ))}
               </div>
-              <div className="space-y-4">
-                {devExp.expertise[activeCategory].skills.map((skill, i) => (
-                  <SkillBar
-                    key={skill.name}
-                    name={skill.name}
-                    level={skill.level}
-                    years={skill.years}
-                    delay={i * 0.1}
-                  />
-                ))}
+              <div className="glass-premium rounded-2xl p-6">
+                <div className="flex items-center justify-between mb-6">
+                  <h4 className="text-sm font-semibold text-light/80 uppercase tracking-wider">
+                    {t(`experience.${devExp.expertise[activeCategory].category.replace(/[ &]/g, '')}`)}
+                  </h4>
+                  <span className="text-xs text-muted">{devExp.expertise[activeCategory].skills.length} skills</span>
+                </div>
+                <div className="space-y-5">
+                  {devExp.expertise[activeCategory].skills.map((skill, i) => (
+                    <SkillBar
+                      key={skill.name}
+                      name={skill.name}
+                      level={skill.level}
+                      years={skill.years}
+                      delay={i * 0.1}
+                      color={`bg-gradient-to-r ${devExp.expertise[activeCategory].color}`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
 
             <div className="lg:col-span-2">
               <div className="glass-premium rounded-2xl p-6 h-full">
-                <h4 className="text-base font-semibold text-light mb-5 flex items-center gap-2">
-                  <i className="fas fa-cogs text-primary text-sm" />
+                <h4 className="text-sm font-semibold text-light/80 uppercase tracking-wider mb-6 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                   {t('home.myWorkflow')}
                 </h4>
                 <div className="space-y-0">
                   {devExp.workflow.map((step, i) => (
-                    <WorkflowStep key={step.step} {...step} index={i} />
+                    <WorkflowStep key={step.step} {...step} index={i} total={devExp.workflow.length} />
                   ))}
                 </div>
               </div>
