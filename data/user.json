@@ -425,6 +425,40 @@
       }
     ]
   },
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Ahmed Benali",
+      "role": "CEO, TechStart Maroc",
+      "avatar": "",
+      "text": "Idir is an exceptional developer. He built our entire e-commerce platform from scratch. His code is clean, he delivers on time, and his communication is excellent.",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "name": "Sarah El Fassi",
+      "role": "Project Manager, Mandi Tech Info",
+      "avatar": "",
+      "text": "Working with Idir was a great experience. He has a strong work ethic and always goes the extra mile to ensure client satisfaction. Highly recommended!",
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "name": "Youssef Chairi",
+      "role": "Founder, DivinDeep",
+      "avatar": "",
+      "text": "Idir delivered our SaaS platform ahead of schedule and exceeded our expectations. His expertise in Laravel and modern frontend frameworks is outstanding.",
+      "rating": 5
+    },
+    {
+      "id": 4,
+      "name": "Khadija Amrani",
+      "role": "CTO, WebSolutions",
+      "avatar": "",
+      "text": "Professional, skilled, and reliable. Idir transformed our outdated website into a modern, fast, and responsive platform. Our traffic increased by 200%.",
+      "rating": 5
+    }
+  ],
   "about": {
     "title": "About",
     "description": "Get acquainted further about me, story and biography of my life",

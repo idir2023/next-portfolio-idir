@@ -54,6 +54,18 @@ const AnimatedCounter = ({ value, suffix }) => {
 const AppHero = () => {
   const { t, isRTL } = useLanguage();
 
+  const handleScrollToProjects = (e) => {
+    e.preventDefault();
+    if (typeof window !== 'undefined') {
+      const el = document.getElementById('projects');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        window.location.href = '/projects';
+      }
+    }
+  };
+
   return (
     <header className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent pointer-events-none" />
@@ -81,7 +93,7 @@ const AppHero = () => {
               {t('hero.description')}
             </p>
 
-            <div className={`flex flex-wrap gap-4 justify-center items-center ${isRTL ? 'lg:justify-end' : 'lg:justify-start'}`}>
+            <div className={`flex flex-wrap gap-3 justify-center items-center ${isRTL ? 'lg:justify-end' : 'lg:justify-start'}`}>
               <AppButton
                 title={t('hero.getQuote')}
                 href="/contact"
@@ -89,12 +101,22 @@ const AppHero = () => {
                 icon="fas fa-bolt"
                 className="!mt-0 shadow-lg shadow-accent/20 hover:shadow-accent/40"
               />
-              <AppButton
-                title={t('hero.viewWork')}
-                href="/projects"
-                variant="outline"
-                className="!mt-0"
-              />
+              <a
+                href="#projects"
+                onClick={handleScrollToProjects}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 text-light font-medium hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 !mt-0"
+              >
+                <i className="fas fa-folder-open text-primary/70 text-sm" />
+                {t('hero.viewWork')}
+              </a>
+              <a
+                href="/images/cv.pdf"
+                download="Idir_Lahcen_CV.pdf"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 text-muted font-medium hover:border-primary/30 hover:text-primary hover:bg-primary/5 transition-all duration-300 !mt-0"
+              >
+                <i className="fas fa-download text-xs" />
+                {t('hero.resume')}
+              </a>
             </div>
 
             <div className={`flex items-center gap-5 mt-10 justify-center ${isRTL ? 'lg:justify-end' : 'lg:justify-start'}`}>

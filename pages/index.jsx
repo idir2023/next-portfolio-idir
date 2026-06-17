@@ -200,6 +200,41 @@ const Home = () => {
         </AppSection>
 
         <AppSection
+          id="testimonials"
+          title={t('home.testimonials')}
+          subtitle={t('home.testimonialsSubtitle')}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {USER.testimonials.map((item, index) => (
+              <div
+                key={item.id}
+                className="glass-premium rounded-2xl p-6 animate-slide-up relative overflow-hidden group"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <i className="fas fa-quote-right absolute top-4 right-4 text-3xl text-primary/10 group-hover:text-primary/20 transition-all" />
+                <div className="flex items-center gap-2 mb-4">
+                  {[...Array(item.rating)].map((_, i) => (
+                    <i key={i} className="fas fa-star text-accent text-xs" />
+                  ))}
+                </div>
+                <p className="text-muted text-sm leading-relaxed mb-5 italic">
+                  &ldquo;{item.text}&rdquo;
+                </p>
+                <div className="flex items-center gap-3 border-t border-white/5 pt-4">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                    {item.name.charAt(0)}
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-semibold text-light">{item.name}</h4>
+                    <p className="text-[11px] text-muted">{item.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </AppSection>
+
+        <AppSection
           id="skills"
           title={t('home.skillsTechnology')}
           subtitle={t('home.skillsSubtitle')}
