@@ -264,6 +264,14 @@ const translations = {
        cta: 'Get a Quote',
        features: "What's Included",
      },
+     workflow: {
+       '0': { title: 'Requirements Analysis', desc: 'Understanding business needs, defining scope, and planning architecture' },
+       '1': { title: 'Database Design', desc: 'ERD modeling, migrations, relationships, and query optimization' },
+       '2': { title: 'Backend Development', desc: 'Building REST APIs, business logic, authentication, and middleware' },
+       '3': { title: 'Frontend Integration', desc: 'Connecting UI with APIs, state management, and responsive design' },
+       '4': { title: 'Testing & QA', desc: 'Unit testing, integration testing, bug fixing, and performance tuning' },
+       '5': { title: 'Deployment & Support', desc: 'Server setup, CI/CD, monitoring, and ongoing maintenance' },
+     },
    },
    fr: {
     nav: {
@@ -526,6 +534,14 @@ const translations = {
        cta: 'Demander un devis',
        features: 'Ce qui est inclus',
      },
+     workflow: {
+       '0': { title: 'Analyse des besoins', desc: 'Compréhension des besoins métier, définition du périmètre et planification de l\'architecture' },
+       '1': { title: 'Conception de la base de données', desc: 'Modélisation ERD, migrations, relations et optimisation des requêtes' },
+       '2': { title: 'Développement Backend', desc: 'Construction d\'APIs REST, logique métier, authentification et middleware' },
+       '3': { title: 'Intégration Frontend', desc: 'Connexion de l\'interface avec les APIs, gestion d\'état et design responsive' },
+       '4': { title: 'Tests & QA', desc: 'Tests unitaires, tests d\'intégration, correction de bugs et optimisation des performances' },
+       '5': { title: 'Déploiement & Support', desc: 'Configuration serveur, CI/CD, monitoring et maintenance continue' },
+     },
    },
    ar: {
     nav: {
@@ -786,6 +802,14 @@ const translations = {
       badge: 'ما أقدمه',
       cta: 'اطلب عرض سعر',
       features: 'ما هو مشمول',
+    },
+    workflow: {
+      '0': { title: 'تحليل المتطلبات', desc: 'فهم احتياجات العمل، تحديد النطاق، وتخطيط البنية' },
+      '1': { title: 'تصميم قاعدة البيانات', desc: 'نمذجة ERD، الترحيلات، العلاقات، وتحسين الاستعلامات' },
+      '2': { title: 'تطوير الواجهة الخلفية', desc: 'بناء REST APIs، منطق الأعمال، المصادقة، والوسائط' },
+      '3': { title: 'تكامل الواجهة الأمامية', desc: 'ربط واجهة المستخدم بـ APIs، إدارة الحالة، والتصميم المتجاوب' },
+      '4': { title: 'الاختبار وضمان الجودة', desc: 'الاختبارات الوحدوية، اختبارات التكامل، إصلاح الأخطاء، وضبط الأداء' },
+      '5': { title: 'النشر والدعم', desc: 'إعداد الخادم، CI/CD، المراقبة، والصيانة المستمرة' },
     },
   },
 };

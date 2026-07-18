@@ -139,30 +139,33 @@ const SkillBar = ({ name, level, years, delay, color }) => {
   );
 };
 
-const WorkflowStep = ({ step, title, description, index, total }) => (
-  <div className="relative group" style={{ animationDelay: `${index * 0.1}s` }}>
-    <div className="flex items-start gap-4">
-      <div className="flex flex-col items-center">
-        <div className={`w-9 h-9 rounded-xl flex items-center justify-center text-white font-bold text-xs shadow-lg transition-all duration-500 ${
-          index === 0
-            ? 'bg-gradient-to-br from-primary to-secondary shadow-primary/30'
-            : index === total - 1
-            ? 'bg-gradient-to-br from-accent to-pink-500 shadow-accent/30'
-            : 'bg-surface border border-white/10 group-hover:border-primary/40 group-hover:shadow-primary/20 group-hover:shadow-lg'
-        }`}>
-          {step}
+const WorkflowStep = ({ step, index, total }) => {
+  const { t } = useLanguage();
+  return (
+    <div className="relative group" style={{ animationDelay: `${index * 0.1}s` }}>
+      <div className="flex items-start gap-4">
+        <div className="flex flex-col items-center">
+          <div className={`w-9 h-9 rounded-xl flex items-center justify-center text-white font-bold text-xs shadow-lg transition-all duration-500 ${
+            index === 0
+              ? 'bg-gradient-to-br from-primary to-secondary shadow-primary/30'
+              : index === total - 1
+              ? 'bg-gradient-to-br from-accent to-pink-500 shadow-accent/30'
+              : 'bg-surface border border-white/10 group-hover:border-primary/40 group-hover:shadow-primary/20 group-hover:shadow-lg'
+          }`}>
+            {step}
+          </div>
+          {index < total - 1 && (
+            <div className="w-px h-full min-h-[2rem] bg-gradient-to-b from-primary/20 to-transparent mt-1.5" />
+          )}
         </div>
-        {index < total - 1 && (
-          <div className="w-px h-full min-h-[2rem] bg-gradient-to-b from-primary/20 to-transparent mt-1.5" />
-        )}
-      </div>
-      <div className="flex-1 pb-5">
-        <h4 className="text-sm font-semibold text-light group-hover:text-primary transition-colors">{title}</h4>
-        <p className="text-xs text-muted/60 mt-0.5 leading-relaxed">{description}</p>
+        <div className="flex-1 pb-5">
+          <h4 className="text-sm font-semibold text-light group-hover:text-primary transition-colors">{t(`workflow.${index}.title`)}</h4>
+          <p className="text-xs text-muted/60 mt-0.5 leading-relaxed">{t(`workflow.${index}.desc`)}</p>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const Home = () => {
   const { t } = useLanguage();
