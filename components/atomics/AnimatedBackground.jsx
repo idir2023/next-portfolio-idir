@@ -1,37 +1,28 @@
-const Particles = () => {
-  const particles = Array.from({ length: 20 }, (_, i) => ({
-    id: i,
-    left: `${Math.random() * 100}%`,
-    size: Math.random() * 4 + 1,
-    delay: `${Math.random() * 15}s`,
-    duration: `${15 + Math.random() * 15}s`,
-    opacity: Math.random() * 0.3 + 0.1,
-  }));
+import { useState, useEffect } from 'react';
 
-  return (
-    <>
-      {particles.map((p) => (
-        <div
-          key={p.id}
-          className="particle"
-          style={{
-            left: p.left,
-            width: p.size,
-            height: p.size,
-            opacity: p.opacity,
-            animationDelay: p.delay,
-            animationDuration: p.duration,
-            background: p.id % 3 === 0
-              ? '#6366F1'
-              : p.id % 3 === 1
-              ? '#8B5CF6'
-              : '#F59E0B',
-          }}
-        />
-      ))}
-    </>
-  );
+const Particle = ({ id }) => {
+  const [style, setStyle] = useState({});
+
+  useEffect(() => {
+    setStyle({
+      left: `${Math.random() * 100}%`,
+      width: Math.random() * 4 + 1,
+      height: Math.random() * 4 + 1,
+      opacity: Math.random() * 0.3 + 0.1,
+      animationDelay: `${Math.random() * 15}s`,
+      animationDuration: `${15 + Math.random() * 15}s`,
+      background: id % 3 === 0 ? '#6366F1' : id % 3 === 1 ? '#8B5CF6' : '#F59E0B',
+    });
+  }, [id]);
+
+  if (!style.left) return null;
+
+  return <div className="particle" style={style} />;
 };
+
+const Particles = () => (
+  <>{Array.from({ length: 20 }, (_, i) => <Particle key={i} id={i} />)}</>
+);
 
 const AnimatedBackground = () => {
   return (

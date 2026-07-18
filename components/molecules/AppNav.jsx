@@ -114,7 +114,7 @@ const AppNav = () => {
       <div className={`fixed inset-0 z-40 transition-all duration-300 lg:hidden ${
         isActiveToggler ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
       }`}>
-        <div className="absolute inset-0 bg-dark/60 backdrop-blur-sm" onClick={closeMenu} />
+        <div className="absolute inset-0 bg-dark/85 backdrop-blur-md" onClick={closeMenu} />
         <div className={`absolute top-20 left-0 right-0 mx-4 transition-all duration-300 ${
           isActiveToggler ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'
         }`}>
