@@ -7,40 +7,41 @@ import AppProject from '../components/atomics/AppProject';
 import AppShell from '../components/templates/AppShell';
 import { useLanguage } from '../context/LanguageContext';
 
-const services = [
-  { id: 2, key: 'services.websiteDev', desc: 'services.websiteDevDesc', icon: '/images/service-website.svg' },
-  { id: 3, key: 'services.webAppDev', desc: 'services.webAppDevDesc', icon: '/images/service-webapps.svg' },
-  { id: 4, key: 'services.responsiveDesign', desc: 'services.responsiveDesignDesc', icon: '/images/service-rwd.svg' },
-  { id: 5, key: 'services.performance', desc: 'services.performanceDesc', icon: '/images/service-performance.svg' },
-];
-
-const serviceFeatures = [
-  { id: 1, key: 'services.featureModern' },
-  { id: 2, key: 'services.featureFast' },
-  { id: 3, key: 'services.featureSecure' },
-  { id: 4, key: 'services.featureSupport' },
+const servicesIcons = [
+  '/images/service-website.svg',
+  '/images/service-webapps.svg',
+  '/images/service-rwd.svg',
+  '/images/service-performance.svg',
+  '/images/service-performance.svg',
+  '/images/service-webapps.svg',
 ];
 
 const skillKeyMap = {
-  'HTML 5': 'skills.html',
-  'CSS 3': 'skills.css',
-  'Javascript': 'skills.javascript',
-  'TailwindCss': 'skills.tailwind',
+  'PHP': 'skills.php',
   'Laravel': 'skills.laravel',
-  'Bootstrap 5': 'skills.bootstrap',
+  'MySQL': 'skills.mysql',
+  'JavaScript': 'skills.javascript',
   'React JS': 'skills.react',
   'Next JS': 'skills.next',
-  'Firebase': 'skills.firebase',
+  'TailwindCss': 'skills.tailwind',
+  'Bootstrap 5': 'skills.bootstrap',
+  'jQuery': 'skills.jquery',
+  'Docker': 'skills.docker',
   'Git': 'skills.git',
   'Github': 'skills.github',
-  'Sql': 'skills.sql',
+  'Composer': 'skills.composer',
+  'Linux': 'skills.linux',
+  'API': 'skills.api',
+  'Firebase': 'skills.firebase',
+  'HTML 5': 'skills.html',
+  'CSS 3': 'skills.css',
+  'Node JS': 'skills.nodejs',
+  'MongoDB': 'skills.mongodb',
   'Vite JS': 'skills.vite',
   'Java': 'skills.java',
   'Visual Studio Code': 'skills.vscode',
-  'Linux': 'skills.linux',
   'C++': 'skills.cpp',
-  'Node JS': 'skills.nodejs',
-  'MongoDB': 'skills.mongodb',
+  'Sql': 'skills.sql',
 };
 
 const CircularProgress = ({ level, size = 70, strokeWidth = 5, color }) => {
@@ -176,27 +177,27 @@ const Home = () => {
           title={t('home.whatCanIDo')}
           subtitle={t('home.servicesSubtitle')}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
-            {services.map((item, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
+            {USER.services.slice(0, 6).map((item, index) => (
               <div
                 key={item.id}
                 className="service-card p-8 rounded-2xl animate-slide-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center mb-5 shadow-lg shadow-primary/10">
-                  <Image src={item.icon} alt={t(item.key)} width={34} height={34} />
+                  <Image src={servicesIcons[index]} alt={item.name} width={34} height={34} />
                 </div>
                 <h3 className="text-xl font-semibold text-light mb-3">
-                  {t(item.key)}
+                  {item.name}
                 </h3>
                 <p className="text-muted text-sm leading-relaxed mb-5">
-                  {t(item.desc)}
+                  {item.description}
                 </p>
-                <ul className="space-y-2">
-                  {serviceFeatures.map((feature) => (
-                    <li key={feature.id} className="flex items-center gap-2 text-xs text-muted">
-                      <i className="fas fa-check-circle text-primary text-xs" />
-                      <span>{t(feature.key)}</span>
+                <ul className="space-y-2.5">
+                  {item.features.slice(0, 4).map((feature, fi) => (
+                    <li key={fi} className="flex items-center gap-2 text-xs text-muted">
+                      <i className="fas fa-check-circle text-primary text-xs flex-shrink-0" />
+                      <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -272,6 +273,31 @@ const Home = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </AppSection>
+
+        <AppSection
+          id="faq"
+          title={t('faq.title')}
+          subtitle={t('faq.description')}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 reveal">
+            {USER.faq.slice(0, 6).map((item, index) => (
+              <div
+                key={item.id}
+                className="glass-premium rounded-2xl p-5 group hover:border-primary/20 transition-all duration-300"
+              >
+                <div className="flex items-start gap-3">
+                  <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">
+                    {String(item.id).padStart(2, '0')}
+                  </span>
+                  <div>
+                    <h3 className="text-sm font-semibold text-light mb-1.5 group-hover:text-primary transition-colors">{item.question}</h3>
+                    <p className="text-xs text-muted/70 leading-relaxed">{item.answer}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </AppSection>
 

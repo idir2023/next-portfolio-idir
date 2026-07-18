@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://idir-lahcen.vercel.app/sitemap.xml

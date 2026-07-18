@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const SITE_URL = 'https://idir-lahcen.vercel.app';
 
-const AppHead = ({ title = 'Idir Lahcen', description = 'Full-stack web developer from Morocco. I build modern web applications with React, Next.js, and Laravel.', keyword = '', image = '/images/logo.jpg', path = '' }) => {
-  const fullTitle = title.includes('|') ? title : `${title} | Idir Lahcen - Full-Stack Web Developer`;
+const AppHead = ({ title = 'Idir Lahcen', description = 'PHP/Laravel Full-Stack Developer from Morocco. I build secure, scalable web applications, REST APIs, SaaS platforms, and ERP systems.', keyword = '', image = '/images/logo.jpg', path = '' }) => {
+  const fullTitle = title.includes('|') ? title : `${title} | Idir Lahcen - PHP/Laravel Full-Stack Developer`;
   const url = `${SITE_URL}${path || ''}`;
 
   return (
@@ -12,7 +12,7 @@ const AppHead = ({ title = 'Idir Lahcen', description = 'Full-stack web develope
       <title>{fullTitle}</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="description" content={description} />
-      <meta name="keywords" content={`Idir Lahcen, web developer, portfolio, frontend developer, full-stack developer, morocco, laravel, react, next.js, ${keyword}`} />
+      <meta name="keywords" content={`Idir Lahcen, Laravel developer, PHP developer, full-stack developer, backend developer, Morocco, REST API, SaaS, ERP, web developer morocco, Laravel freelancer, ${keyword}`} />
       <meta name="robots" content="index, follow" />
       <meta name="author" content="Idir Lahcen" />
 
@@ -44,14 +44,14 @@ const AppHead = ({ title = 'Idir Lahcen', description = 'Full-stack web develope
           name: 'Idir Lahcen',
           url: SITE_URL,
           image: `${SITE_URL}/images/logo.jpg`,
-          jobTitle: 'Full-Stack Web Developer',
-          description: 'Full-stack web developer from Morocco specializing in React, Next.js, and Laravel.',
+          jobTitle: 'PHP/Laravel Full-Stack Web Developer',
+          description: 'PHP/Laravel full-stack developer from Morocco. Specializing in REST APIs, SaaS platforms, ERP systems, and custom web applications.',
           sameAs: [
             'https://github.com/idir2023',
             'https://www.linkedin.com/in/lahcen-i-99270b309/',
             'https://wa.me/+212681736149'
           ],
-          knowsAbout: ['Web Development', 'React', 'Next.js', 'Laravel', 'PHP', 'JavaScript'],
+          knowsAbout: ['Laravel', 'PHP', 'MySQL', 'REST API', 'SaaS', 'ERP', 'React', 'Next.js', 'Tailwind CSS'],
           address: { '@type': 'PostalAddress', addressLocality: 'Casablanca', addressCountry: 'MA' }
         })
       }} />

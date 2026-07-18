@@ -8,6 +8,7 @@ const navItems = [
   { url: '/', key: 'nav.home' },
   { url: '/projects', key: 'nav.projects' },
   { url: '/experiences', key: 'nav.experiences' },
+  { url: '/blog', key: 'nav.blog' },
   { url: '/about', key: 'nav.about' },
   { url: '/contact', key: 'nav.contact' },
 ];

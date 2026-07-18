@@ -7,10 +7,10 @@ import { useLanguage } from "../../context/LanguageContext";
 import { useEffect, useRef, useState } from "react";
 
 const statsData = [
-  { value: 15, suffix: '+', key: 'hero.statsProjects' },
+  { value: 16, suffix: '+', key: 'hero.statsProjects' },
   { value: 4, suffix: '+', key: 'hero.statsExperience' },
-  { value: 20, suffix: '+', key: 'hero.statsClients' },
-  { value: 6, suffix: '+', key: 'hero.statsTechnologies' },
+  { value: 12, suffix: '+', key: 'hero.statsClients' },
+  { value: 20, suffix: '+', key: 'hero.statsTechnologies' },
 ];
 
 const AnimatedCounter = ({ value, suffix }) => {
@@ -78,27 +78,28 @@ const AppHero = () => {
               <span className="text-sm text-light/80 font-medium">{t('hero.available')}</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 leading-tight">
-              <span className="text-light/90">{t('hero.need')} </span>
-              <br className="hidden sm:block" />
-              <span className="shimmer-text">{t('hero.solution')}</span>
-              <span className="text-light/90">?</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-6">
+              <i className="fas fa-shield-alt text-emerald-400 text-xs" />
+              <span className="text-xs text-emerald-400 font-medium">PHP / Laravel</span>
+              <span className="w-px h-3 bg-emerald-500/30 mx-1" />
+              <i className="fas fa-database text-emerald-400 text-xs" />
+              <span className="text-xs text-emerald-400 font-medium">MySQL</span>
+            </div>
+
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 leading-tight">
+              <span className="text-light/90">{t('hero.need')}</span>
             </h1>
 
-            <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold text-muted mb-6">
-              {t('hero.tagline')}
-            </h2>
-
-            <p className="text-muted text-base lg:text-lg max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+            <p className="text-muted text-base lg:text-lg max-w-xl mx-auto lg:mx-0 mb-6 leading-relaxed">
               {t('hero.description')}
             </p>
 
             <div className={`flex flex-wrap gap-3 justify-center items-center ${isRTL ? 'lg:justify-end' : 'lg:justify-start'}`}>
               <AppButton
-                title={t('hero.getQuote')}
+                title={t('hero.contactMe')}
                 href="/contact"
                 variant="gold"
-                icon="fas fa-bolt"
+                icon="fas fa-paper-plane"
                 className="!mt-0 shadow-lg shadow-accent/20 hover:shadow-accent/40"
               />
               <a
@@ -115,7 +116,7 @@ const AppHero = () => {
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 text-muted font-medium hover:border-primary/30 hover:text-primary hover:bg-primary/5 transition-all duration-300 !mt-0"
               >
                 <i className="fas fa-download text-xs" />
-                {t('hero.resume')}
+                {t('hero.downloadCv')}
               </a>
             </div>
 
