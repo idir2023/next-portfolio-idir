@@ -39,10 +39,10 @@ const About = () => {
                 <span className={`w-12 h-12 rounded-xl bg-gradient-to-br ${gradients[index]} flex items-center justify-center shadow-lg`}>
                   <i className={`fas ${icons[index]} text-white text-base`} />
                 </span>
-                {section.name}
+                {t(`about_items.${index}.name`)}
               </h3>
               <p className="text-muted leading-relaxed text-sm md:text-base">
-                {section.description}
+                {t(`about_items.${index}.desc`)}
               </p>
             </div>
           </div>
