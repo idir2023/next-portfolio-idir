@@ -185,19 +185,19 @@ const Home = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center mb-5 shadow-lg shadow-primary/10">
-                  <Image src={servicesIcons[index]} alt={item.name} width={34} height={34} />
+                  <Image src={servicesIcons[index]} alt={t(`services.${index}.name`)} width={34} height={34} />
                 </div>
                 <h3 className="text-xl font-semibold text-light mb-3">
-                  {item.name}
+                  {t(`services.${index}.name`)}
                 </h3>
                 <p className="text-muted text-sm leading-relaxed mb-5">
-                  {item.description}
+                  {t(`services.${index}.desc`)}
                 </p>
                 <ul className="space-y-2.5">
                   {item.features.slice(0, 4).map((feature, fi) => (
                     <li key={fi} className="flex items-center gap-2 text-xs text-muted">
                       <i className="fas fa-check-circle text-primary text-xs flex-shrink-0" />
-                      <span>{feature}</span>
+                      <span>{t(`services.${index}.features.${fi}`)}</span>
                     </li>
                   ))}
                 </ul>
