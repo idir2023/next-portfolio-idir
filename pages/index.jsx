@@ -295,8 +295,8 @@ const Home = () => {
                     {String(item.id).padStart(2, '0')}
                   </span>
                   <div>
-                    <h3 className="text-sm font-semibold text-light mb-1.5 group-hover:text-primary transition-colors">{item.question}</h3>
-                    <p className="text-xs text-muted/70 leading-relaxed">{item.answer}</p>
+                    <h3 className="text-sm font-semibold text-light mb-1.5 group-hover:text-primary transition-colors">{t(`faq_items.${index}.question`)}</h3>
+                    <p className="text-xs text-muted/70 leading-relaxed">{t(`faq_items.${index}.answer`)}</p>
                   </div>
                 </div>
               </div>
@@ -323,7 +323,7 @@ const Home = () => {
                   ))}
                 </div>
                 <p className="text-muted text-sm leading-relaxed mb-5 italic">
-                  &ldquo;{item.text}&rdquo;
+                  &ldquo;{t(`testimonials.${index}.text`)}&rdquo;
                 </p>
                 <div className="flex items-center gap-3 border-t border-white/5 pt-4">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
@@ -331,7 +331,7 @@ const Home = () => {
                   </div>
                   <div>
                     <h4 className="text-sm font-semibold text-light">{item.name}</h4>
-                    <p className="text-[11px] text-muted">{item.role}</p>
+                    <p className="text-[11px] text-muted">{t(`testimonials.${index}.role`)}</p>
                   </div>
                 </div>
               </div>
