@@ -47,7 +47,7 @@ const AppFooter = () => {
               {[
                 { url: '/', label: t('nav.home') },
                 { url: '/projects', label: t('nav.projects') },
-                { url: '/blog', label: t('nav.blog') },
+                { url: '/services', label: t('nav.services') },
                 { url: '/experiences', label: t('nav.experiences') },
                 { url: '/about', label: t('nav.about') },
                 { url: '/contact', label: t('nav.contact') },
